@@ -101,6 +101,7 @@ input {
 }
 .height {
     height: 200px ;
+    margin-left: 0px;
 }
 .a1 {
     text-decoration: none;
@@ -163,6 +164,13 @@ input {
 textarea {
     border-color: #008080ff;
 }
-.button {
-    
+
+.icon1 {
+    background-color: #008080ff;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+.imguser {
+    border-radius: 50%;
 }
