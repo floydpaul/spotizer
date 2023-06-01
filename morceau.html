@@ -9,48 +9,64 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Morceau</title>
 </head>
-<body class="parent1">
-    <header class="div7 color1 background3 flex-center-col justify-flex-start">
-        <img src="logo_spotizer.svg">
-        <div><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Acceuil</a></div>
-        <div><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
-        <div><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
-        <div><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
-    </header>
-    <main>
-        <div class="div8 flex-center around background2">
-            <p></p><input id="searchbar" type="text" name="search" placeholder="">
-           <div class="flex-center">
-            <a class="a2" href="inscription.html">S'INSCRIRE</a>
-            <button class="bttn1" href="connexion.html">SE CONNECTER</button>
+<body>
+    <div class="container  text-center">
+        <div class="row">
+            <div class="col">
+                <header class="color1 background3 flex-centerjustify-flex-start width2">
+                    <img class="height" src="logo_spotizer.svg">
+                    <div><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Acceuil</a></div>
+                    <div><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
+                    <div><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
+                    <div><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
+                </header>
+            </div>
+           <div class="col">
+            <main class="col">
+                <div class="flex-center around background2 width3">
+                    <input id="searchbar" type="text" name="search" placeholder="" class="">
+                   <div class="flex-center">
+                    <a class="a2" href="inscription.html">S'INSCRIRE</a>
+                    <div  class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-success">Se connecter</button><br>
+                    </div>
+                   </div>
+                </div>
+                <div class="color1 flex-center width3">
+                    <div class="flex-center">
+                        <div><img src="./jaquettes/smellsliketeenspirit.jpg" alt=""></div>
+                        <div>
+                            <h1>NIRVANA</h1>
+                            <h2>Smells like teen spirit</h2>
+                            <p>Ajouté par <B>Darkshadow</B> le 13/02/2022</p>
+                        </div>    
+                    </div>
+                    <div class="">
+                        <p>Smells Like Teen Spirit est la première chanson de l'album Nevermind, du groupe américain de grunge Nirvana, sorti en 1991.Compossé un peu avant 
+                            l'enregistrement de l'album, elle doit son nom à une référence faite par une amie de Kurt Cobain , le chanteur du groupe, à une marque de déodorant 
+                            nommée Teen Spirit (en) alors que Cobain pensait y voir une allusion anarchiste. Le titre utilise une dynamique inspirée des pixies qui joue sur l'alternance
+                            entre couplets calmes et refrain puissant avec un riff principal à quatre accords. Ses paroles semblent dépourvues de sens et ont donné lieu à diverses 
+                            interprétations, parfois contradictoires.
+                        </p>
+                    </div>
+                    <div class="">
+                        <h3>Commentaires</h3>
+                        <p>"C'est un super album ! " publié par <B>Jeannot</B> le 13/05/2022</p>
+                        <p></p>"Vive le Grunge" publié par <B>Natacha</B> le 12/04/2022
+                        <p>"Très bon morceau" publié par <B>Sophie</B> le 12/04/2022</p>
+                        <textarea class="color1" rows="5" cols="20"></textarea><br>
+                        <div  class="d-grid gap-2 col-6 mx-auto"></div>
+                        <button type="button" class="btn btn-success">Ajouter un commentaire</button><br>
+                        </div>
+                    </div>
+            
+                </div>
+            </main>
            </div>
+          
         </div>
-        <div class="div9 color1 flex-center parent2">
-            <div class="div10 flex-center">
-                <div><img src="./jaquettes/smellsliketeenspirit.jpg" alt=""></div>
-                <div>
-                    <h1>NIRVANA</h1>
-                    <h2>Smells like teen spirit</h2>
-                    <p>Ajouté par <B>Darkshadow</B> le 13/02/2022</p>
-                </div>    
-            </div>
-            <div class="div11">
-                <p>Smells Like Teen Spirit est la première chanson de l'album Nevermind, du groupe américain de grunge Nirvana, sorti en 1991.Compossé un peu avant 
-                    l'enregistrement de l'album, elle doit son nom à une référence faite par une amie de Kurt Cobain , le chanteur du groupe, à une marque de déodorant 
-                    nommée Teen Spirit (en) alors que Cobain pensait y voir une allusion anarchiste. Le titre utilise une dynamique inspirée des pixies qui joue sur l'alternance
-                    entre couplets calmes et refrain puissant avec un riff principal à quatre accords. Ses paroles semblent dépourvues de sens et ont donné lieu à diverses 
-                    interprétations, parfois contradictoires.
-                </p>
-            </div>
-            <div class="div12">
-                <h3>Commentaires</h3>
-                <p>"C'est un super album ! " publié par <B>Jeannot</B> le 13/05/2022</p>
-                <p></p>"Vive le Grunge" publié par <B>Natacha</B> le 12/04/2022
-                <p>"Très bon morceau" publié par <B>Sophie</B> le 12/04/2022</p>
-                <textarea class="color1" rows="5" cols="20"></textarea><br>
-                <button class="bttn2">Ajouter un commentaire</button><br>
-            </div>
-        </div>
+    
+    </div>
     
 </body>
 </html>

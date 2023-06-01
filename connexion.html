@@ -10,21 +10,28 @@
     <title>Connexion</title>
 </head>
 <body>
-    <header class="background2"><img class="height" src="logo_spotizer.svg"></header>
+    <header class="background2"><img class="height1" src="logo_spotizer.svg"></header>
     <main>
         <div class="flex-center-col background3">
             <div class=" background1 color4 width1">
-                <div><p>J'ai un compte Spotizer</p></div>
-                <div>
+                <div class="container text-center"><p>J'ai un compte Spotizer</p></div>
+                <div class="mb-3">
                 <form action="">
-                    <label class="text-align" for="identifiant">Pseudo</label><br>
-                    <input type="text" name="identifiant"><br>
-                    <label for="mdp">Mot de passe</label><br>
-                    <input type="text" name="mdp"><br>
-                    <button class="bttn2" >Se connecter</button><br>
+                    <div class="container text-center">
+                        <label class="form-label" for="identifiant">Pseudo</label><br>
+                        <input type="text" class="form-control" name="identifiant"><br>
+                    </div>
+                    <div class="container text-center">
+                        <label class="form-label" for="mdp">Mot de passe</label><br>
+                        <input type="text" class="form-control" name="mdp"><br>
+                    </div>
+                    <div  class="d-grid gap-2 col-6 mx-auto">
+                        <button type="button" class="btn btn-success">Se connecter</button><br>
+                    </div>
+                    
                 </form>
                 </div> 
-                <div><p>Vous n'avez pas de compte? <a class="a1" href="inscription.html">INSCRIVEZ-VOUS</a></p></div>
+                <div class="container text-center"><p>Vous n'avez pas de compte? <a class="a1" href="inscription.html">INSCRIVEZ-VOUS</a></p></div>
             </div>
         </div>
     </main>
