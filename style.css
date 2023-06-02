@@ -1,3 +1,9 @@
+body {
+    font-family: calibri;
+    margin:0;
+    height: 100vh;
+}
+
 /*background-colors*/
 .background1 {
     background-color: #008080ff ;
@@ -49,6 +55,10 @@
 }
 
 /*positionnement*/
+.flex {
+    display: flex;
+}
+
 .flex-center, .flex-center-col {
 	display: flex;
 	justify-content: center;
@@ -81,9 +91,10 @@
 .bttn1 {
     color: white;
     background-color: #008080ff;
-    border-radius: 20%;
-    border: 2px solid #008080ff;
+    border-radius: 20px;
+    text-decoration: none;t
 }
+
 .bttn2 {
     color: white;
     background-color: #008080ff;
@@ -157,12 +168,105 @@ input {
     .div12 { grid-area: 3 / 1 / 4 / 2; }
 
 .icon {
-    height: 15px;
-    width: 15px;
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
 }
 textarea {
     border-color: #008080ff;
 }
-.button {
-    
+
+nav {
+    width: 300px;
+    font-size: 30px;
+    font-weight: 300;
+    padding-left: 50px;
+}
+
+.element {
+    display: flex;
+    margin: 20px 0;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.connexion {
+    height: 50px;
+    justify-content: right;
+    align-items: center;
+}
+
+.contener {
+    width: 100%;
+}
+
+.cards {
+    justify-content: center;
+    padding: 40px;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: auto;
+}
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+.card img {
+    border-radius: 20px 20px 0 0;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #008080ff;
+}
+
+.connexion a {
+     margin: 10px 20px;
+     height: 30px;
+     width: 130px;
+     line-height: 30px;
+     text-align: center;
+}
+
+#precedent {
+    background-image: url('icones/precedent.svg');
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+
+.cards::before {
+    content: "";
+    background-image: url('icones/precedent.svg');
+    background-size: cover;
+    width:100px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    left: 400px;
+
+}
+
+.cards::after {
+    content: "";
+    background-image: url('icones/suivant.svg');
+    background-size: cover;
+    width:100px;
+    height: 100px;
+    position: absolute;
+    top: 400px;
+    right: 100px;
+
+}
+
+#suivant {
+    background-image: url('icones/suivant.svg');
+    width: 100px;
+    height: 100px;
+    background-size: cover;
 }
