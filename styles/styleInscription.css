@@ -65,7 +65,7 @@ body {
 .flex-center, .flex-center-col {
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     height: 100vh;
 }
 .flex-center-col {
