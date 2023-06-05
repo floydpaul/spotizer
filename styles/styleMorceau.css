@@ -202,3 +202,9 @@ a {
 .imguser {
     border-radius: 50%;
 }
+
+.connexion {
+    height: 50px;
+    justify-content: right;
+    align-items: center;
+}
