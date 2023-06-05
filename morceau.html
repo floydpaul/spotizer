@@ -4,68 +4,58 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles/styleMorceau.css"> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-    <title>Morceau</title>
+    <link rel="stylesheet" type="text/css" href="styles/styleMorceau.css">
+
+    <title>Spotizer</title>
 </head>
-<body>
-    <div class="text-center">
-        <div class="row">
-            <div class="col-2">
-                <header class="color1 background3  justify-flex-start width2" style="width: 321px;height: 100%;">
-                    <img class="height" src="logo_spotizer.svg">
-                    <div><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Acceuil</a></div>
-                    <div><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
-                    <div><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
-                    <div><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
-                </header>
-            </div>
-            <div class="col-10">
-             <main>
-                <div class="text-center">
-                    <div class="row justify-content-start around background2">
-                        <div class="connexion background2 justify-flex-end">
-                            <a class="a2" href="inscription.html">S'INSCRIRE</a>
-                            <a class="bttn1" href="connexion.html">SE CONNECTER</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-start color1" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
-                        <div class="row " style="width: 100%;">
-                            <div class="col-6"><img style="height: 150px; width: 150px;" src="./jaquettes/smellsliketeenspirit.jpg" class="card-img-top img-thumbnail" alt="" ></div>
-                            <div class="col-6">
-                                <h5 class="card-title  color1">NIRVANA</h5>
-                                <h6 class="card-subtitle mb-2  color1">Smells like teen spirit</h6>
-                                <p class="card-text color1">Ajouté par <B>Darkshadow</B> le 13/02/2022</p>
-                            </div>    
-                        </div>
-                        <div class="" style="display: flex;">
-                            <p>Smells Like Teen Spirit est la première chanson de l'album Nevermind, du groupe américain de grunge Nirvana, sorti en 1991.Compossé un peu avant 
-                                l'enregistrement de l'album, elle doit son nom à une référence faite par une amie de Kurt Cobain , le chanteur du groupe, à une marque de déodorant 
-                                nommée Teen Spirit (en) alors que Cobain pensait y voir une allusion anarchiste. Le titre utilise une dynamique inspirée des pixies qui joue sur l'alternance
-                                entre couplets calmes et refrain puissant avec un riff principal à quatre accords. Ses paroles semblent dépourvues de sens et ont donné lieu à diverses 
-                                interprétations, parfois contradictoires.
-                            </p>
-                        </div>
-                        <div class="">
-                            <h3>Commentaires</h3>
-                            <p>"C'est un super album ! " publié par <B>Jeannot</B> le 13/05/2022</p>
-                            <p>"Vive le Grunge" publié par <B>Natacha</B> le 12/04/2022</p>
-                            <p>"Très bon morceau" publié par <B>Sophie</B> le 12/04/2022</p>
-                            <textarea class="color1" rows="5" cols="20"></textarea><br>
-                            <div  class="d-grid gap-2 col-6 mx-auto"></div>
-                            <button type="button" class="btn btn-success">Ajouter un commentaire</button><br>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                
-                </main>
-           </div>
-          
-        </div>
-    
+<body class="flex">
+    <div class="background3">
+        <img class="height" src="icones/logo_spotizer.svg">
+        <nav>
+            <div class="element"><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Acceuil</a></div>
+            <div class="element"><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
+            <div class="element"><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
+            <div class="element"><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
+        </nav>
     </div>
-    
+    <div class="contener">
+        <div class="connexion background2 flex">
+            <a class="a2" href="inscription.html">S'INSCRIRE</a>
+            <a class="bttn1" href="connexion.html">SE CONNECTER</a>
+        </div>
+        <div class="pd-50 color1">
+            <div class="flex">
+                <img  src="./jaquettes/smellsliketeenspirit.jpg" class="card-img-top img-thumbnail" alt="" >
+                <div class="description">
+                    <h1>NIRVANA</h1>
+                    <h2>Smells like teen spirit</h2>
+                    <p>Ajouté par <B>Darkshadow</B> le 13/02/2022</p>
+                </div>
+            </div>
+            <div class="" style="display: flex;">
+                <p>Smells Like Teen Spirit est la première chanson de l'album Nevermind, du groupe américain de grunge Nirvana, sorti en 1991.Compossé un peu avant 
+                    l'enregistrement de l'album, elle doit son nom à une référence faite par une amie de Kurt Cobain , le chanteur du groupe, à une marque de déodorant 
+                    nommée Teen Spirit (en) alors que Cobain pensait y voir une allusion anarchiste. Le titre utilise une dynamique inspirée des pixies qui joue sur l'alternance
+                    entre couplets calmes et refrain puissant avec un riff principal à quatre accords. Ses paroles semblent dépourvues de sens et ont donné lieu à diverses 
+                    interprétations, parfois contradictoires.
+                </p>
+            </div>
+            <div class="">
+                <h3>Commentaires</h3>
+                <p>"C'est un super album ! " publié par <B>Jeannot</B> le 13/05/2022</p>
+                <p>"Vive le Grunge" publié par <B>Natacha</B> le 12/04/2022</p>
+                <p>"Très bon morceau" publié par <B>Sophie</B> le 12/04/2022</p>
+
+                <form>
+                    
+                      <textarea class="color1" rows="5" cols="50"></textarea><br>
+
+                <div  class="d-grid gap-2 col-6 mx-auto"></div>
+                <input type="submit" class="submit" value="Ajouter un commentaire">
+                </form>
+              
+            </div>
+        </div>
+    </div>
 </body>
 </html>
