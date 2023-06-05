@@ -65,7 +65,7 @@ body {
 .flex-center, .flex-center-col {
     display: flex;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 50px;
     height: 100vh;
 }
 .flex-center-col {
@@ -196,9 +196,10 @@ a {
 }
 
 .submit {
-    background: none;
+    background:  #008080ff;
     border: 1px solid white;
     color: white;
+    font-size: 25px;
 }
 
 .text-center {
