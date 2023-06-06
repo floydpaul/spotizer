@@ -34,7 +34,7 @@
                     </div>
                      <div class="container text-center">
                         <label for="presentation" class="form-label">Veuillez vous présenter</label><br>
-                        <textarea  rows="7 cols="40" id="presentation" name="presentation"></textarea><br>
+                        <textarea  rows="7" cols="40" id="presentation" name="presentation"></textarea><br>
                     </div>
                     <div  class="d-grid gap-2 col-6 mx-auto">
                         <input type="submit" class="submit" value="S'inscrire">
