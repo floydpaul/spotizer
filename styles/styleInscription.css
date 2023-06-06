@@ -93,7 +93,12 @@ body {
 
 /*elements*/
 textarea {
-    border-color: #008080ff;
+    /* border-color: #008080ff; */
+    background: #f2f2f2ff;
+    border: none;
+    width: 470px;
+    border-radius: 20px;
+    resize: none;
 }
 .bttn1 {
     color: white;
