@@ -1,3 +1,10 @@
+<?php
+
+require_once('bdd.php');
+require_once('queries.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,50 +30,21 @@
             <a class="a2" href="inscription.php">S'INSCRIRE</a>
             <a class="bttn1" href="connexion.php">SE CONNECTER</a>
         </div>
-                
         <div class="flex cards">
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/smellsliketeenspirit.jpg" alt="">
-                <h2>NIRVANA</h2>
-                <h3>Smells like teen spririt</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/youri.png" alt="">
-                <h2>YOURI</h2>
-                <h3>Progress</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/madonna.jpg" alt="">
-                <h2>MADONNNA</h2>
-                <h3>Sorry</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/fantasia.jpg" alt="">
-                <h2>FANTASIA</h2>
-                <h3>The definiton of</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/sindy.jpeg" alt="">
-                <h2>SINDY</h2>
-                <h3>Sans rancune</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/david.jpg" alt="">
-                <h2>DAVID CARREIRA</h2>
-                <h3>Tout recommencer</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/sindy.jpeg" alt="">
-                <h2>SINDY</h2>
-                <h3>Sans rancune</h3>
-            </div>
-            <div class="card">
-                <img class="imgindex" src="./jaquettes/david.jpg" alt="">
-                <h2>DAVID CARREIRA</h2>
-                <h3>Tout recommencer</h3>
-            </div>
-        </div>
+        <?php
 
+        foreach($morceaux as $morceau){?>
+            <div class="card">
+                <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
+                <h2><?= $morceau['pseudo'] ?></h2>
+                <h3><?= $morceau['titre'] ?></h3>
+            </div>
+
+        <?php
+        }
+        ?>        
+        
+        </div>
     </div>
 </body>
 </html>
