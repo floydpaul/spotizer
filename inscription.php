@@ -32,9 +32,14 @@
                         <label for="cmdp" class="form-label">Comfirmer mot de passe</label><br>
                         <input type="text" name="cmdp" class="form-control"><br>
                     </div>
+                     <div class="container text-center">
+                        <label for="presentation" class="form-label">Veuillez vous présenter</label><br>
+                        <textarea  rows="7" cols="40" id="presentation" name="presentation"></textarea><br>
+                    </div>
                     <div  class="d-grid gap-2 col-6 mx-auto">
                         <input type="submit" class="submit" value="S'inscrire">
                     </div>
+
                 </form>
                 <div class="container text-center">
                     <p>Vous avez déjà un compte? <a class="a2" href="connexion.php">CONNECTEZ-VOUS</a></p>
