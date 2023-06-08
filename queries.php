@@ -1,9 +1,6 @@
 <?php
-
-<<<<<<< HEAD
-=======
+include('bdd.php');
 /* requête pour récupérer tous les morceaux */
->>>>>>> c9bfb2b2902764823bba8f52142b8c7ea0db1397
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
 $query->execute();
 $morceaux = $query->fetchAll();

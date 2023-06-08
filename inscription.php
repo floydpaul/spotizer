@@ -15,7 +15,7 @@
                 <div class="container text-center">
                     <h1>Inscrivez vous gratuitement pour lancer la lecture</h1>
                 </div>
-                <form name="inscription" method="post" action="ajouterUser.php">
+                <form name="inscription" method="post" enctype="multipart/form-data" action="ajouterUser.php">
                     <div class="container text-center">
                         <label for="email" class="form-label">Adresse email</label><br>
                         <input type="mail" name="email" class="form-control"><br>
