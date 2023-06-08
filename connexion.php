@@ -8,7 +8,6 @@
     <link rel="stylesheet" type="text/css" href="styles/styleConnexion.css">    
     <title>Connexion</title>
 </head>
-<?php include('functions.php')?>
 <body>
     <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
     <main>
@@ -26,7 +25,13 @@
                         <label class="form-label" for="mdp">Mot de passe</label><br>
                         <input type="text" class="form-control" name="mdp"><br>
                     </div>
-                  <input type="submit" value="SE CONNECTER" class="submit">
+                    <div class="container text-center flex">
+                        <input type="radio" name="statut" value="artiste" class="form-control" style="width: 50px; margin-left:175px">
+                        <label for="artiste" style="margin-top: 20px;">Artiste</label>
+                    </div>
+                    <div class="container">
+                        <input type="submit" value="SE CONNECTER" class="submit">
+                    </div>  
                     
                 </form>
                
