@@ -26,11 +26,11 @@
                     </div>
                     <div class="container text-center">
                         <label for="mdp" class="form-label">Mot de passe</label><br>
-                        <input type="text" name="mdp" class="form-control"><br>
+                        <input type="password" name="mdp" class="form-control"><br>
                     </div>
                     <div class="container text-center">
                         <label for="cmdp" class="form-label">Comfirmer mot de passe</label><br>
-                        <input type="text" name="cmdp" class="form-control"><br>
+                        <input type="password" name="cmdp" class="form-control"><br>
                     </div>
                     <div class=" text-center">
                         <input type="file" name="photo">

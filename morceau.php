@@ -1,3 +1,11 @@
+<?php
+
+require_once('bdd.php');
+require_once('queries.php');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,27 +33,28 @@
         </div>
         <div class="pd-50 color1">
             <div class="flex">
-                <img  src="./jaquettes/smellsliketeenspirit.jpg" class="card-img-top img-thumbnail" alt="" >
+                <img  src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="card-img-top img-thumbnail" alt="" >
                 <div class="description">
-                    <h1>NIRVANA</h1>
-                    <h2>Smells like teen spirit</h2>
-                    <p>Ajouté par <B>Darkshadow</B> le 13/02/2022</p>
+                    <h1><?= $morceau['pseudo'] ?></h1>
+                    <h2><?= $morceau['titre'] ?></h2>
                 </div>
             </div>
             <div class="" style="display: flex;">
-                <p>Smells Like Teen Spirit est la première chanson de l'album Nevermind, du groupe américain de grunge Nirvana, sorti en 1991.Compossé un peu avant 
-                    l'enregistrement de l'album, elle doit son nom à une référence faite par une amie de Kurt Cobain , le chanteur du groupe, à une marque de déodorant 
-                    nommée Teen Spirit (en) alors que Cobain pensait y voir une allusion anarchiste. Le titre utilise une dynamique inspirée des pixies qui joue sur l'alternance
-                    entre couplets calmes et refrain puissant avec un riff principal à quatre accords. Ses paroles semblent dépourvues de sens et ont donné lieu à diverses 
-                    interprétations, parfois contradictoires.
-                </p>
+                <p><?= $morceau['description'] ?></p>
             </div>
             <div class="">
                 <h3>Commentaires</h3>
-                <p>"C'est un super album ! " publié par <B>Jeannot</B> le 13/05/2022</p>
-                <p>"Vive le Grunge" publié par <B>Natacha</B> le 12/04/2022</p>
-                <p>"Très bon morceau" publié par <B>Sophie</B> le 12/04/2022</p>
-
+                <?php
+                foreach($commentaires as $commentaire){?>
+                    <p><?= $commentaire['contenu']; ?> 
+                    <b><?= $commentaire['pseudo']; ?></b> 
+                    <?= $commentaire['date_publication']; ?>
+                </p>
+                <?php
+                }
+                ?>
+                
+               
                 <form>
                     
                       <textarea class="color1" rows="5" cols="50"></textarea><br>

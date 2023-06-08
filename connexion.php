@@ -23,11 +23,7 @@
                     </div>
                     <div class="container text-center">
                         <label class="form-label" for="mdp">Mot de passe</label><br>
-                        <input type="text" class="form-control" name="mdp"><br>
-                    </div>
-                    <div class="container text-center flex">
-                        <input type="radio" name="statut" value="artiste" class="form-control" style="width: 50px; margin-left:175px">
-                        <label for="artiste" style="margin-top: 20px;">Artiste</label>
+                        <input type="password" class="form-control" name="mdp"><br>
                     </div>
                     <div class="container">
                         <input type="submit" value="SE CONNECTER" class="submit">
