@@ -1,8 +1,14 @@
 <?php
 
+<<<<<<< HEAD
 require_once('bdd.php');
 
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> a48efdc55a61ac9cac46b8b901acb666e4cdd3b8
 /* requête pour récupérer tous les morceaux */
+>>>>>>> c9bfb2b2902764823bba8f52142b8c7ea0db1397
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
 $query->execute();
 $morceaux = $query->fetchAll();

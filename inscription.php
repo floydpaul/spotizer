@@ -11,7 +11,7 @@
      <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
     <main>
         <div class="flex-center-col background3">
-            <div class="color1 background4 width1">
+            <div class="color1 background4 width1" style="margin-top: -35px;">
                 <div class="container text-center">
                     <h1>Inscrivez vous gratuitement pour lancer la lecture</h1>
                 </div>
@@ -26,15 +26,22 @@
                     </div>
                     <div class="container text-center">
                         <label for="mdp" class="form-label">Mot de passe</label><br>
-                        <input type="text" name="mdp" class="form-control"><br>
+                        <input type="password" name="mdp" class="form-control"><br>
                     </div>
                     <div class="container text-center">
                         <label for="cmdp" class="form-label">Comfirmer mot de passe</label><br>
-                        <input type="text" name="cmdp" class="form-control"><br>
+                        <input type="password" name="cmdp" class="form-control"><br>
+                    </div>
+                    <div class=" text-center">
+                        <input type="file" name="photo">
+                    </div>
+                    <div class="flex">
+                        <input type="radio" name="statut" value="artiste" class="form-control" style="width: 50px; margin-left:175px; margin-top: 0px">
+                        <label for="artiste" style="margin-top: 0px;">Artiste</label>
                     </div>
                      <div class="container text-center">
-                        <label for="presentation" class="form-label">Veuillez vous présenter</label><br>
-                        <textarea  rows="7" cols="40" id="presentation" name="presentation"></textarea><br>
+                        <label for="presentation" class="form-label">Veuillez vous présenter</label>
+                        <textarea  rows="5" cols="40" id="presentation" name="presentation"></textarea><br>
                     </div>
                     <div  class="d-grid gap-2 col-6 mx-auto">
                         <input type="submit" class="submit" value="S'inscrire">

@@ -10,46 +10,41 @@
 </head>
 <body>
 <?php session_start();
-        $db = new PDO(
-'mysql:host=localhost;dbname=spotizer;charset=utf8',
-'root',
-''
-);
-$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id');
-$query ->execute([
-	'id' => $_POST['identifiant'],
-]);
-$user = $query->fetchall();
+ include('bdd.php');
 
-if (empty($user)) {
-	die('Erreur de connexion');
-}
+	$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id AND mdp = :mdp');
+	$query ->execute([
+		'id' => $_POST['identifiant'],
+		'mdp' =>$_POST['mdp']
+	]);
+	$user = $query->fetchall();
 
-
-if ( empty($_POST['identifiant']) || empty($_POST['mdp']) || !isset($_POST['identifiant']) || !isset($_POST['mdp'])  ) {
-	die('Combinaison pseudo/mot de passe invalide.');
-}
-
-$pseudo = strip_tags($_POST['identifiant']);
-$mdp = strip_tags($_POST['mdp']);
-
-
-?>
-<?php
-$isPassCorrect = password_verify($mdp, $user[0]['mdp']);
-
-if ($isPassCorrect == true) {
-	$_SESSION['id_user']= $user[0]['id_user'];
+	
+	
+	if (empty($user)) {
+		die('Erreur de connexion');
+	}
+	
+	
+	if ( empty($_POST['identifiant']) || empty($_POST['mdp']) || !isset($_POST['identifiant']) || !isset($_POST['mdp'])  ) {
+		die('Combinaison pseudo/mot de passe invalide.');
+	}
+	
+	$pseudo = strip_tags($_POST['identifiant']);
+	$mdp = strip_tags($_POST['mdp']);
+	$_SESSION['id_utilisateur']= $user[0]['id_utilisateur'];
 	$_SESSION['identifiant']= $user[0]['pseudo'];
-	$_SESSION['mail']= $user[0]['mail'];
-	$_SESSION['statut'] = $user[0]['statut'];
-	header('Location: acceuil.php');
-}
-else {
-	die('Entrez les bons identifiants de connexion');
-}
+	$_SESSION['email']= $user[0]['email'];
+	header('Location: accueil.php');
+
+
+
+ 
 
 
 ?>
+
+
+
 </body>
 </html>
