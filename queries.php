@@ -1,11 +1,5 @@
 <?php
-<<<<<<< HEAD
 include('bdd.php');
-=======
-
-require_once('bdd.php');
-
->>>>>>> 09a7e1a25d795fe6ac84e57e8f0b0835bc6b7960
 /* requête pour récupérer tous les morceaux */
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
 $query->execute();
