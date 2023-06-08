@@ -1,6 +1,6 @@
 <?php
 
-require_once('bdd.php');
+
 require_once('queries.php');
 
 
@@ -20,7 +20,7 @@ require_once('queries.php');
     <div class="background3">
         <img class="height" src="icones/logo_spotizer.svg">
         <nav>
-            <div class="element"><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Accueil</a></div>
+            <div class="element"><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="accueil.php">Accueil</a></div>
             <div class="element"><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
             <div class="element"><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
             <div class="element"><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
@@ -55,12 +55,9 @@ require_once('queries.php');
                 ?>
                 
                
-                <form>
-                    
-                      <textarea class="color1" rows="5" cols="50"></textarea><br>
-
-                <div  class="d-grid gap-2 col-6 mx-auto"></div>
-                <input type="submit" class="submit" value="Ajouter un commentaire">
+                <form action="queries.php?id_morceau=<?= $morceau['id_morceau']; ?>" method="POST">
+                    <textarea class="color1" name="contenu" rows="5" cols="50"></textarea><br>
+                    <input type="submit" class="submit" value="Ajouter un commentaire">
                 </form>
               
             </div>
