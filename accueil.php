@@ -37,7 +37,7 @@ require_once('queries.php');
             <div class="card">
                 <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
                 <h2><?= $morceau['pseudo'] ?></h2>
-                <h3><?= $morceau['titre'] ?></h3>
+                <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre'] ?></a></h3>
             </div>
 
         <?php
