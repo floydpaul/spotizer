@@ -27,8 +27,19 @@ require_once('queries.php');
     </div>
     <div class="contener">
         <div class="connexion background2 flex">
-            <a class="a2" href="inscription.php">S'INSCRIRE</a>
-            <a class="bttn1" href="connexion.php">SE CONNECTER</a>
+            <?php 
+            
+                if(!empty($_SESSION)){?>
+                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
+                <?php
+                }
+                else {?>
+                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
+                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
+                <?php
+                }
+            
+            ?>
         </div>
         <div class="pd-50 color1">
             <div class="flex">
