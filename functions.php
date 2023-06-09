@@ -34,7 +34,7 @@
                     }
                 };
                     //On prépare la commande sql d'insertion
-                        $query = $db->prepare('INSERT INTO  utilisateur(pseudo,email,mdp,presentation,photo,artiste) VALUES(:pseudo,:email,:mdp,:presentation,:photo,:artiste)'); 
+                        $query = $db->prepare('INSERT INTO  utilisateur(pseudo,email,mdp,presentation,photo,artiste,date_inscritpion) VALUES(:pseudo,:email,:mdp,:presentation,:photo,:artiste,:date_inscription)'); 
                     
                                 /*on lance la commande (query)*/
                         $query->execute([
@@ -44,6 +44,7 @@
                             'presentation'=>$presentation,
                             'photo'=>$destination,
                             'artiste'=>true,
+                            'date_inscription'=>date("Ymd"),
                             ]);
             }
             else {
@@ -67,7 +68,7 @@
                     }
                 };
                     //On prépare la commande sql d'insertion
-                        $query = $db->prepare('INSERT INTO utilisateur(pseudo,email,mdp,presentation,photo,artiste) VALUES(:pseudo,:email,:mdp,:presentation,:photo,:artiste)'); 
+                        $query = $db->prepare('INSERT INTO utilisateur(pseudo,email,mdp,presentation,photo,artiste,date_inscritpion) VALUES(:pseudo,:email,:mdp,:presentation,:photo,:artiste,:date_inscritpion)'); 
                     
                                 /*on lance la commande (query)*/
                         $query->execute([
@@ -77,6 +78,7 @@
                             'presentation'=>$presentation,
                             'photo'=>$destination,
                             'artiste'=>false,
+                            'date_inscritpion'=> date("Ymd")
                             ]);
                     };
         
@@ -86,9 +88,9 @@
  
 ?>
 
+
 <?php 
-function modifier_profile()
-{
+function modifier_profile(){
     include('bdd.php');
 $query = $db ->prepare('UPDATE utilsateur SET pseudo =:pseudo, presentation =:presentation, photo =:photo WHERE id_utilisateur =:id_utilisateur');
 $query ->execute([
@@ -99,3 +101,5 @@ $query ->execute([
 
 }
 ?>
+
+

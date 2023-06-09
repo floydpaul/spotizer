@@ -26,6 +26,7 @@ require_once('queries.php');
             <?php 
             
                 if(!empty($_SESSION)){?>
+                    <a class="a2" href="user_profile.php">Mon profil</a>
                     <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
                 <?php
                 }
