@@ -1,5 +1,7 @@
-<?php session_start();
+<?php 
+
+session_start();
 $_SESSION = [];
 session_destroy();
-header('Location:acceuil.php');
+header('Location:accueil.php');
 ?>
