@@ -2,10 +2,17 @@
 session_start();
 
 include('bdd.php');
+
 /* requête pour récupérer tous les morceaux */
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
 $query->execute();
 $morceaux = $query->fetchAll();
+
+/* requête pour récupérer toutes les catégories */
+$query = $db->prepare('SELECT * FROM style');
+$query->execute();
+$categories = $query->fetchAll();
+
 
 /* requête pour récupérer tous les informations d'un morceau selon son identifiant */
 if(isset($_GET['id_morceau'])){
@@ -14,6 +21,16 @@ if(isset($_GET['id_morceau'])){
 	$query->execute();
 	$morceau = $query->fetch();	
 }
+
+/* requête pour récupérer les informations d'une catégorie */
+if(isset($_GET['id_categorie'])){
+	
+	$query = $db->prepare('SELECT * FROM style  NATURAL JOIN morceau WHERE id_style='.$_GET['id_categorie'].'');
+	$query->execute();
+	$morceaux = $query->fetchAll();	
+}
+
+
 
 /*requête pour récupérer tous les commentaires d'un morceau*/
 if(isset($_GET['id_morceau'])){

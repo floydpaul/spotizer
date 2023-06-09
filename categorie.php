@@ -11,6 +11,7 @@ require_once('queries.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleCategorie.css">
 
     <title>Spotizer</title>
 </head>
@@ -36,22 +37,18 @@ require_once('queries.php');
                 }
             
             ?>
-            
         </div>
-        <div class="flex cards">
-        <?php
+        <div>
+        	<img src="images/styles/<?= $morceaux[0]['vignette']; ?>" class="categorie">
+        </div>
+        <div>
+        	<?php
+        		foreach($morceaux as $morceau){?>
+        			<img src="images/jaquettes/<?= $morceau['jaquette']; ?>">
 
-        foreach($morceaux as $morceau){?>
-            <div class="card">
-                <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
-                <h2><?= $morceau['pseudo'] ?></h2>
-                <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre'] ?></a></h3>
-            </div>
-
-        <?php
-        }
-        ?>        
-        
+        		<?php
+        		}
+        	?>
         </div>
     </div>
 </body>
