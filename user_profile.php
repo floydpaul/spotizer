@@ -28,37 +28,40 @@
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
-                    <h1>Jean Dupont</h1>
+                    <h1><?= $utilisateur['pseudo'];?></h1>
                     <div class="inscription flex">
-                        <h3>Inscrit depuis le 19/01/2021</h3>
-                        <h3>Utilisateur</h3>
+                        <h3><?= $utilisateur['date_inscription'] ?></h3>
+                        <h3><?php if ($utilisateur['artiste']==true) {
+                            echo 'artsite'
+                        } else {
+                            echo 'utilisateur'
+                        }
+                         ?></h3>
                     </div>
                 </div>   
                 <div>
-                    <img src="images/Jean.jpg" alt="jean" class="imguser">
+                    <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="jean" class="imguser">
                     <a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
                 </div>
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p>J'aime la musique rock et partager ma passion avec d'autres mélomanes.</p><a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $utilisateur['presentation']; ?></p><a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
                 </div>
             </div>
             <div id="commentaires">
                 <h3>Commentaires</h3>
                 <div class="flex comments">
-                     <p>"C'est un super morceau" publié le 13/05/2022 pour le titre <B>Smells like teen spirit</B></p>
-                     <a href="#"><img src="icones/modifier.svg" class="icon1"></a>
-                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a>     
-                </div>
-               <div class="flex comments">
-                     <p>"Le meilleur morceau de l'album" publié le 16/05/2022 pour le titre <B>Hello</B></p>
-                     <a href="#"><img src="icones/modifier.svg" class="icon1"></a>
-                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a>     
-                </div>
-                <div class="flex comments">
-                     <p>"J'adore !" publié le 05/06/2022 pour le tire <B>Mon invitation</B></p>
+                <?php
+                foreach($comments as $commentaire){?>
+                    <p><?= $commentaire['contenu']; ?> 
+                    <?= $commentaire['date_publication']; ?>
+                    <b><?= $commentaire['titre']; ?></b> 
+                </p>
+                <?php
+                }
+                ?>
                      <a href="#"><img src="icones/modifier.svg" class="icon1"></a>
                      <a href="#"><img src="icones/poubelle.svg" class="icon1"></a>     
                 </div>
