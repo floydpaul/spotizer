@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 include('bdd.php');
 /* requête pour récupérer tous les morceaux */
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
@@ -30,7 +32,7 @@ if(isset($_POST['contenu'])){
 	$query->execute([
 		'date_publication' => date("Ymd"),
 		'contenu' => $_POST['contenu'],
-		'id_utilisateur' => 1,
+		'id_utilisateur' => $_SESSION['id_utilisateur'],
 		'id_morceau' => $_GET['id_morceau'],
 		]);
 
