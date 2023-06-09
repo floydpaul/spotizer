@@ -13,7 +13,7 @@
         die('Les mots de passes concordent pas!! Entrez des mots de passe identiques');
     }
     include('bdd.php');
-            if ($_POST['artiste']) {
+            if ($_POST['statut']=='artiste') {
                 // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
                 if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                     $destination = ('spotizer/images/utilisateurs/' . $_FILES['photo']['name']);
@@ -43,7 +43,7 @@
                             'mdp'=>$mdp,
                             'presentation'=>$presentation,
                             'photo'=>$destination,
-                            'artsite'=>true,
+                            'artiste'=>true,
                             ]);
             }
             else {
@@ -76,7 +76,7 @@
                             'mdp'=>$mdp,
                             'presentation'=>$presentation,
                             'photo'=>$destination,
-                            'artsite'=>false,
+                            'artiste'=>false,
                             ]);
                     };
         
@@ -94,7 +94,7 @@ $query = $db ->prepare('UPDATE utilsateur SET pseudo =:pseudo, presentation =:pr
 $query ->execute([
         'pseudo'=> $_POST['pseudo'],
         'presentation'=> $_POST['presentation'],
-        'id_utilisateur'=> $_GET['id'],
+        'id_utilisateur'=> $_GET['id_utilasteur'],
 ]) ;    
 
 }
