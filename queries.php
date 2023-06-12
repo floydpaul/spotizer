@@ -25,7 +25,7 @@ if(isset($_GET['id_morceau'])){
 /* requête pour récupérer les informations d'une catégorie */
 if(isset($_GET['id_categorie'])){
 	
-	$query = $db->prepare('SELECT * FROM style  NATURAL JOIN morceau WHERE id_style='.$_GET['id_categorie'].'');
+	$query = $db->prepare('SELECT * FROM style  NATURAL JOIN morceau NATURAL JOIN utilisateur WHERE id_style='.$_GET['id_categorie'].'');
 	$query->execute();
 	$morceaux = $query->fetchAll();	
 }
