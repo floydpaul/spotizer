@@ -32,9 +32,9 @@
                     <div class="inscription flex">
                         <h3><?= $utilisateur['date_inscription'] ?></h3>
                         <h3><?php if ($utilisateur['artiste']==true) {
-                            echo 'artsite'
+                            echo 'artsite';
                         } else {
-                            echo 'utilisateur'
+                            echo 'utilisateur';
                         }
                          ?></h3>
                     </div>

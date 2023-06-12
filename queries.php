@@ -56,14 +56,14 @@ if(isset($_POST['contenu'])){
 	header('location:morceau.php?id_morceau='.$_GET['id_morceau'].'');
 }
 /*requête pour récupérer les informations d'un profil selon son identifiant*/ 
-if (isset $_GET['id_utilisateur']) {
-	$query = $db->prepare('SELECT * FROM utilsateur WHERE id_utilisateur ='.$_GET['id_utilisateur']'');
+if (isset ($_GET['id_utilisateur'])) {
+	$query = $db->prepare('SELECT * FROM utilsateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
 	$query->execute();
 	$utilisateur = $query->fetchAll();
 }
 /*requête pour récuperer les commentaires faits par un utilisateur*/
-if (isset $_GET['id_utilisateur']) {
-	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilsateur WHERE id_utilisateur ='.$_GET['id_utilisateur']'');
+if (isset ($_GET['id_utilisateur'])) {
+	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilsateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
 	$query->execute();
 	$comments = $query->fetchAll();
 }
