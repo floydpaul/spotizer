@@ -90,31 +90,68 @@
 
 
 <?php 
-function modifier_image(){
-    include('bdd.php');
-    if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
-        $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
-        // Testons si le fichier n'est pas trop gros
-        if ($_FILES['photo']['size'] <= 1000000)
-        {
-
-                // Testons si l'extension est autorisée
-                $fileInfo = pathinfo($_FILES['photo']['name']);
-                $extension = $fileInfo['extension'];
-                $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
-                $tmpName = $_FILES['photo']['tmp_name'];
-                if (in_array($extension, $allowedExtensions))
-                {
-                        // On peut valider le fichier et le stocker définitivement
-                    move_uploaded_file($tmpName, $destination);
-                }
+function updateUser(){
+    if (isset($_FILES['photo']) && isset($_POST['presentation'])) {
+        include('bdd.php');
+        if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
+            $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
+            // Testons si le fichier n'est pas trop gros
+            if ($_FILES['photo']['size'] <= 1000000)
+            {
+    
+                    // Testons si l'extension est autorisée
+                    $fileInfo = pathinfo($_FILES['photo']['name']);
+                    $extension = $fileInfo['extension'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $tmpName = $_FILES['photo']['tmp_name'];
+                    if (in_array($extension, $allowedExtensions))
+                    {
+                            // On peut valider le fichier et le stocker définitivement
+                        move_uploaded_file($tmpName, $destination);
+                    }
+            }
+        };
+        $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation, photo =:photo WHERE id_utilisateur =:id_utilisateur');
+        $query ->execute([
+            'presentation'=> strip_tags($_POST['presentation']),
+            'photo'=> $_FILES['photo']['name'],
+            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+    ]) ;
+    } 
+    if (isset($_FILES['photo']) && !isset($_POST['presentation'])) {
+        include('bdd.php');
+        if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
+            $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
+            // Testons si le fichier n'est pas trop gros
+            if ($_FILES['photo']['size'] <= 1000000)
+            {
+    
+                    // Testons si l'extension est autorisée
+                    $fileInfo = pathinfo($_FILES['photo']['name']);
+                    $extension = $fileInfo['extension'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $tmpName = $_FILES['photo']['tmp_name'];
+                    if (in_array($extension, $allowedExtensions))
+                    {
+                            // On peut valider le fichier et le stocker définitivement
+                        move_uploaded_file($tmpName, $destination);
+                    }
+            }
+        };
+        $query = $db ->prepare('UPDATE utilisateur SET photo =:photo WHERE id_utilisateur =:id_utilisateur');
+        $query ->execute([
+            'photo'=> $_FILES['photo']['name'],
+            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+            ]) ;
         }
-    };
-    $query = $db ->prepare('UPDATE utilsateur SET photo =:photo WHERE id_utilisateur =:id_utilisateur');
-    $query ->execute([
-        'photo'=> $_FILES['photo']['name'],
-        'id_utilisateur'=> $_GET['id_utilasteur'],
-]) ;    
+    if (!isset($_FILES['photo']) && isset($_POST['presentation'])) {
+        include('bdd.php');
+        $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation WHERE id_utilisateur =:id_utilisateur');
+        $query ->execute([
+            'presentation'=> strip_tags($_POST['presentation']),
+            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+    ]) ;
+    }     
 
 }
 ?>

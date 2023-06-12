@@ -41,13 +41,13 @@ include('queries.php');
                 </div>   
                 <div>
                     <img src="images/utilisateurs/<?= $_SESSION['photo']; ?>" alt="profile" class="imguser">
-                    <a href="modifierprofile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
+                    <a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
                 </div>
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $_SESSION['presentation']; ?></p><a href="modifierprofile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $_SESSION['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
                 </div>
             </div>
             <div id="commentaires">
