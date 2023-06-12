@@ -38,18 +38,34 @@ require_once('queries.php');
             
             ?>
         </div>
-        <div>
-        	<img src="images/styles/<?= $morceaux[0]['vignette']; ?>" class="categorie">
-        </div>
-        <div>
-        	<?php
-        		foreach($morceaux as $morceau){?>
-        			<img src="images/jaquettes/<?= $morceau['jaquette']; ?>">
+        <section>
+            <div class="flex">
+            	<img src="images/styles/<?= $morceaux[0]['vignette']; ?>" class="categorie">
+                <h1><?= $morceaux[0]['nom']; ?></h1>
+            </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Titre</th>
+                            <th>Artiste</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            	<?php
 
-        		<?php
-        		}
-        	?>
-        </div>
+            		foreach($morceaux as $morceau){?>
+                        <tr>
+                			<td><img src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="morceau"></td>
+                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></td>
+                            <td><?= $morceau['pseudo']; ?></td>
+                        </tr>
+            		<?php
+            		}
+            	?>
+                </tbody>
+                </table>
+        </section>    
     </div>
 </body>
 </html>
