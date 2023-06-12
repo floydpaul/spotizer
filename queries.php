@@ -68,7 +68,7 @@ if (isset ($_GET['id_utilisateur'])) {
 }
 /*requête pour récuperer les commentaires faits par une session id_utilisateur*/
 if (isset ($_SESSION['id_utilisateur'])) {
-	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
+	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN morceau NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
 	$query->execute();
 	$comments = $query->fetchAll();
 }

@@ -1,5 +1,6 @@
 <?php 
 include('queries.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,18 +16,13 @@ include('queries.php');
 <body class="flex">
     <div class="background3">
         <img class="height" src="icones/logo_spotizer.svg">
-        <nav>
-            <div class="element"><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="index.html">Accueil</a></div>
-            <div class="element"><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
-            <div class="element"><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
-            <div class="element"><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
-        </nav>
+      <?php include('menu.php');?>
     </div>
     <div class="contener">
         <div class="connexion background2 flex">
-            <?php if (isset($_SESSION['identifiant'])) {
-                echo '<a class="bttn1" href="logout.php">SE DÉCONNECTER</a>';
-            }?>
+            <?php if (isset($_SESSION['identifiant'])) {?>
+               <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
+            <?php }?>
             
         </div>
         <div class="pd-50 color1">
@@ -34,7 +30,7 @@ include('queries.php');
                 <div>
                     <h1><?= $_SESSION['pseudo'];?></h1>
                     <div class="inscription flex">
-                        <h3><?= $_SESSION['date_inscription'] ?></h3>
+                        <h3><?= $_SESSION['date_inscription'];?></h3>
                         <h3><?php if ($_SESSION['artiste']==true) {
                             echo 'artsite';
                         } else {
@@ -44,14 +40,14 @@ include('queries.php');
                     </div>
                 </div>   
                 <div>
-                    <img src="images/utilisateurs/<?= $_SESSION['photo']; ?>" alt="jean" class="imguser">
-                    <a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
+                    <img src="images/utilisateurs/<?= $_SESSION['photo']; ?>" alt="profile" class="imguser">
+                    <a href="modifierprofile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
                 </div>
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $_SESSION['presentation']; ?></p><a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $_SESSION['presentation']; ?></p><a href="modifierprofile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
                 </div>
             </div>
             <div id="commentaires">
