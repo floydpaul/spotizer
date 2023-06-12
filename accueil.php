@@ -24,7 +24,6 @@ require_once('queries.php');
     <div class="contener">
         <div class="connexion background2 flex">
             <?php 
-            
                 if(!empty($_SESSION)){?>
                     <a class="a2" href="user_profile.php">Mon profil</a>
                     <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>

@@ -1,3 +1,6 @@
+<?php 
+include('queries.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,7 @@
 
     <title>Spotizer</title>
 </head>
+
 <body class="flex">
     <div class="background3">
         <img class="height" src="icones/logo_spotizer.svg">
@@ -28,10 +32,10 @@
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
-                    <h1><?= $utilisateur['pseudo'];?></h1>
+                    <h1><?= $_SESSION['pseudo'];?></h1>
                     <div class="inscription flex">
-                        <h3><?= $utilisateur['date_inscription'] ?></h3>
-                        <h3><?php if ($utilisateur['artiste']==true) {
+                        <h3><?= $_SESSION['date_inscription'] ?></h3>
+                        <h3><?php if ($_SESSION['artiste']==true) {
                             echo 'artsite';
                         } else {
                             echo 'utilisateur';
@@ -40,14 +44,14 @@
                     </div>
                 </div>   
                 <div>
-                    <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="jean" class="imguser">
+                    <img src="images/utilisateurs/<?= $_SESSION['photo']; ?>" alt="jean" class="imguser">
                     <a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
                 </div>
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $utilisateur['presentation']; ?></p><a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $_SESSION['presentation']; ?></p><a href="#"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
                 </div>
             </div>
             <div id="commentaires">
