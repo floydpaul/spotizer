@@ -18,28 +18,26 @@ require_once('queries.php');
 <body class="flex">
     <div class="background3">
         <img class="height" src="icones/logo_spotizer.svg">
-        <nav>
-            <div class="element"><img class="icon" src="icones/accueil.svg" alt=""><a class="a2" href="accueil.php">Accueil</a></div>
-            <div class="element"><img class="icon" src="icones/categories.svg" alt=""><a class="a2">Categories</a></div>
-            <div class="element"><img class="icon" src="icones/artiste.svg" alt=""><a class="a2">Artistes</a></div>
-            <div class="element"><img class="icon" src="icones/playlist.svg" alt=""><a class="a2">Playlists</a></div>   
-        </nav>
+        <?php include('menu.php'); ?>
     </div>
     <div class="contener">
         <div class="connexion background2 flex">
-            <?php 
+
+        <?php 
             
-                if(!empty($_SESSION)){?>
+            if(!empty($_SESSION)){?>
+                    <a class="a2" href="user_profile.php">Mon profil</a>
                     <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-                <?php
-                }
-                else {?>
-                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
-                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-                <?php
-                }
-            
-            ?>
+            <?php
+            }
+            else {?>
+                <a class="a2" href="inscription.php">S'INSCRIRE</a>
+                <a class="bttn1" href="connexion.php">SE CONNECTER</a>
+            <?php
+            }
+        
+        ?>
+
         </div>
         <div class="pd-50 color1">
             <div class="flex">

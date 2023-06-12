@@ -1,9 +1,17 @@
 <?php
+session_start();
 include('bdd.php');
+
 /* requête pour récupérer tous les morceaux */
 $query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
 $query->execute();
 $morceaux = $query->fetchAll();
+
+/* requête pour récupérer toutes les catégories */
+$query = $db->prepare('SELECT * FROM style');
+$query->execute();
+$categories = $query->fetchAll();
+
 
 /* requête pour récupérer tous les informations d'un morceau selon son identifiant */
 if(isset($_GET['id_morceau'])){
@@ -12,6 +20,16 @@ if(isset($_GET['id_morceau'])){
 	$query->execute();
 	$morceau = $query->fetch();	
 }
+
+/* requête pour récupérer les informations d'une catégorie */
+if(isset($_GET['id_categorie'])){
+	
+	$query = $db->prepare('SELECT * FROM style  NATURAL JOIN morceau WHERE id_style='.$_GET['id_categorie'].'');
+	$query->execute();
+	$morceaux = $query->fetchAll();	
+}
+
+
 
 /*requête pour récupérer tous les commentaires d'un morceau*/
 if(isset($_GET['id_morceau'])){
@@ -44,7 +62,13 @@ if (isset ($_GET['id_utilisateur'])) {
 }
 /*requête pour récuperer les commentaires faits par un utilisateur*/
 if (isset ($_GET['id_utilisateur'])) {
-	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN morceau WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
+	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
+	$query->execute();
+	$comments = $query->fetchAll();
+}
+/*requête pour récuperer les commentaires faits par une session id_utilisateur*/
+if (isset ($_SESSION['id_utilisateur'])) {
+	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
 	$query->execute();
 	$comments = $query->fetchAll();
 }
