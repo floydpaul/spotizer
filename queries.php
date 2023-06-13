@@ -56,9 +56,15 @@ if(isset($_POST['contenu'])){
 }
 /*requête pour récupérer les informations d'un profil selon son identifiant*/ 
 if (isset ($_GET['id_utilisateur'])) {
-	$query = $db->prepare('SELECT * FROM utilsateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
+	$query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
 	$query->execute();
 	$utilisateur = $query->fetchAll();
+}
+/*requête pour récupérer les informations d'un profil selon son identifiant*/ 
+if (isset ($_SESSION['id_utilisateur'])) {
+	$query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
+	$query->execute();
+	$utilisateur = $query->fetch();
 }
 /*requête pour récuperer les commentaires faits par un utilisateur*/
 if (isset ($_GET['id_utilisateur'])) {
@@ -68,7 +74,13 @@ if (isset ($_GET['id_utilisateur'])) {
 }
 /*requête pour récuperer les commentaires faits par une session id_utilisateur*/
 if (isset ($_SESSION['id_utilisateur'])) {
-	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
+	$query = $db->prepare('SELECT * FROM commentaires NATURAL JOIN morceau NATURAL JOIN utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
 	$query->execute();
 	$comments = $query->fetchAll();
+}
+/*requête pour récuperer un commentaire*/
+if (isset ($_GET['id_comment'])) {
+	$query = $db->prepare('SELECT * FROM commentaires   WHERE id_commentaire ='.$_GET['id_comment'].'');
+	$query->execute();
+	$comment = $query->fetch();
 }
