@@ -44,10 +44,11 @@ require_once('queries.php');
                 <img  src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="card-img-top img-thumbnail" alt="" >
                 <div class="description">
                     <h1><?= $morceau['pseudo'] ?></h1>
-                    <h2><?= $morceau['titre'] ?></h2>
+                    <h2 class="titre"><?= $morceau['titre'] ?></h2>
                 </div>
             </div>
-            <div class="" style="display: flex;">
+            <div>
+                <h3>Présentation</h3>
                 <p><?= $morceau['description'] ?></p>
             </div>
             <div class="">

@@ -176,19 +176,26 @@ nav {
      font-weight:200;
 }
 
-a:hover {
-    text-decoration: underline;
+.a2:hover {
+  
     cursor: pointer;
+    font-weight: 600;
 }
 
 .connexion {
     height: 50px;
     justify-content: right;
     align-items: center;
+    width: 1550px;
 }
 
-.contener {
-    width: 100%;
+#contener {
+    display: flex;
+    position: relative;
+    right: 0;
+    transition: right 1s linear;
+
+
 }
 
 .cards {
@@ -197,6 +204,9 @@ a:hover {
     flex-wrap: wrap;
     width: 1000px;
     margin: auto;
+    margin: 50px 200px;
+    position: absolute;
+    overflow:hidden;
 }
 
 .card {
@@ -222,28 +232,24 @@ h2, h3 {
      text-align: center;
 }
 
-#precedent {
-    background-image: url('icones/precedent.svg');
-    width: 100px;
-    height: 100px;
-    background-size: cover;
-}
 
-.cards::before {
-    content: "";
-    background-image: url('/icones/precedent.svg');
+
+#precedent {
+    
+    background-image: url('/spotizer/icones/precedent.svg');
     background-size: cover;
     width:100px;
     height: 100px;
     position: absolute;
     top: 400px;
     left: 400px;
+    
 
 }
 
-.cards::after {
-    content: "";
-    background-image: url('/icones/suivant.svg');
+#suivant {
+   
+    background-image: url('/spotizer/icones/suivant.svg');
     background-size: cover;
     width:100px;
     height: 100px;
@@ -253,10 +259,17 @@ h2, h3 {
 
 }
 
-#suivant {
-    background-image: url('icones/suivant.svg');
-    width: 100px;
-    height: 100px;
-    background-size: cover;
+
+.moveRight {
+    transform: translateX(-200px);
 }
 
+.moveLeft {
+    transform: translateX(200px);
+}
+
+#slider {
+    display: flex;
+    align-items: center;
+    height: 800px;
+}

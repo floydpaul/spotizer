@@ -21,7 +21,7 @@ require_once('queries.php');
         <?php include('menu.php'); ?>
     
     </div>
-    <div class="contener">
+    <section>
         <div class="connexion background2 flex">
             <?php 
                 if(!empty($_SESSION)){?>
@@ -38,21 +38,29 @@ require_once('queries.php');
             ?>
             
         </div>
-        <div class="flex cards">
-        <?php
+        <div id="slider">
+            <div id="precedent"></div>
+            <div id="suivant"></div>
+            <div class="flex cards">
+                <div id="contener">
+                    <?php
 
-        foreach($morceaux as $morceau){?>
-            <div class="card">
-                <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
-                <h2><?= $morceau['pseudo'] ?></h2>
-                <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre'] ?></a></h3>
+                    foreach($morceaux as $morceau){?>
+                        <div class="card">
+                            <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
+                            <h2><?= $morceau['pseudo'] ?></h2>
+                            <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre'] ?></a></h3>
+                        </div>
+
+                    <?php
+                    }
+                    ?>        
+                                    
+                      
+                </div>
             </div>
-
-        <?php
-        }
-        ?>        
-        
-        </div>
-    </div>
+        </div>    
+    </section>
+<script type="text/javascript" src="scripts/Accueil.js"></script>
 </body>
 </html>

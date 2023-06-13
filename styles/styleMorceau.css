@@ -286,3 +286,15 @@ input {
     width: 300px;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.titre {
+    font-weight: 200;
+    text-transform: capitalize;
+}
+
+.a2:hover {
+  
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
