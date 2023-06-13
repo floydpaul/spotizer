@@ -115,7 +115,7 @@ function updateUser(){
         $query ->execute([
             'presentation'=> strip_tags($_POST['presentation']),
             'photo'=> $_FILES['photo']['name'],
-            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+            'id_utilisateur'=> $_SESSION['id_utilisateur'],
     ]) ;
     } 
     if (isset($_FILES['photo']) && !isset($_POST['presentation'])) {
@@ -141,7 +141,7 @@ function updateUser(){
         $query = $db ->prepare('UPDATE utilisateur SET photo =:photo WHERE id_utilisateur =:id_utilisateur');
         $query ->execute([
             'photo'=> $_FILES['photo']['name'],
-            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+            'id_utilisateur'=> $_SESSION['id_utilisateur'],
             ]) ;
         }
     if (!isset($_FILES['photo']) && isset($_POST['presentation'])) {
@@ -149,11 +149,22 @@ function updateUser(){
         $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation WHERE id_utilisateur =:id_utilisateur');
         $query ->execute([
             'presentation'=> strip_tags($_POST['presentation']),
-            'id_utilisateur'=> $_SESSION['id_utilasteur'],
+            'id_utilisateur'=> $_SESSION['id_utilisateur'],
     ]) ;
     }     
 
 }
 ?>
+
+<?php
+function updateComment(){
+    include('bdd.php');
+    $query = $db ->prepare('UPDATE commentaires SET date_publication=:date_publication, contenu=:contenu WHERE id_commentaire =:id_commentaire');
+        $query ->execute([
+            'date_publication'=>date("Ymd"),
+            'contenu'=> strip_tags($_POST['contenu']),
+            'id_commentaire' =>$_GET['id_comment'],
+        ]);
+}
 
 

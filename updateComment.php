@@ -1,6 +1,6 @@
 <?php 
 session_start();
 include('functions.php');
-updateUser();
+updateComment();
 header('Location: user_profile.php');
 ?>
