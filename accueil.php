@@ -2,6 +2,7 @@
 
 require_once('queries.php');
 
+
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +16,10 @@ require_once('queries.php');
     <title>Spotizer</title>
 </head>
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
-      
-        <?php include('menu.php'); ?>
+     <?php include('menu.php'); ?>
     
-    </div>
     <section>
-        <div class="connexion background2 flex">
+        <div class="connexion  flex">
             <?php 
                 if(!empty($_SESSION)){?>
                     <a class="a2" href="user_profile.php">Mon profil</a>
@@ -48,8 +45,8 @@ require_once('queries.php');
                     foreach($morceaux as $morceau){?>
                         <div class="card">
                             <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
-                            <h2><?= $morceau['pseudo'] ?></h2>
-                            <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre'] ?></a></h3>
+                            <h2><?= $morceau['auteur']; ?></h2>
+                            <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></h3>
                         </div>
 
                     <?php

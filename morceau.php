@@ -2,7 +2,6 @@
 
 require_once('queries.php');
 
-
 ?>
 
 <!DOCTYPE html>
@@ -16,40 +15,43 @@ require_once('queries.php');
     <title>Spotizer</title>
 </head>
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
-        <?php include('menu.php'); ?>
-    </div>
+  <?php include('menu.php'); ?>
     <div class="contener">
-        <div class="connexion background2 flex">
+        <div class="connexion flex">
 
-        <?php 
+            <?php 
             
             if(!empty($_SESSION)){?>
-                    <a class="a2" href="user_profile.php">Mon profil</a>
-                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-            <?php
+                <a class="a2" href="user_profile.php">Mon profil</a>
+                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
+                <?php
             }
             else {?>
                 <a class="a2" href="inscription.php">S'INSCRIRE</a>
                 <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-            <?php
+                <?php
             }
-        
-        ?>
+
+            ?>
 
         </div>
-        <div class="pd-50 color1">
-            <div class="flex">
-                <img  src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="card-img-top img-thumbnail" alt="" >
-                <div class="description">
-                    <h1><?= $morceau['pseudo'] ?></h1>
-                    <h2 class="titre"><?= $morceau['titre'] ?></h2>
+        <div class="pd-50 pd-left-100">
+            <div class="color1">
+                <div class="flex">
+                    <img  src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="card-img-top img-thumbnail" alt="" >
+                    <div class="pd-left-50">                   
+                        <h1><?= $morceau['auteur']; ?></h1>
+                        <h2 class="titre"><?= $morceau['titre']; ?></h2>
+                        <h3><?= $morceau['nom']; ?></h3>
+                        <h4>Ajouté par <?=$morceau['pseudo']; ?></h4>
+                        <audio controls src="mp3/<?= $morceau['fichier']; ?>"></audio>
+                    </div>    
                 </div>
             </div>
             <div>
                 <h3>Présentation</h3>
                 <p><?= $morceau['description'] ?></p>
+
             </div>
             <div class="">
                 <h3>Commentaires</h3>
@@ -60,17 +62,17 @@ require_once('queries.php');
                     <?= $commentaire['date_publication']; ?>
                 </p>
                 <?php
-                }
-                ?>
-                
-               
-                <form action="queries.php?id_morceau=<?= $morceau['id_morceau']; ?>" method="POST">
-                    <textarea class="color1" name="contenu" rows="5" cols="50"></textarea><br>
-                    <input type="submit" class="submit" value="Ajouter un commentaire">
-                </form>
-              
-            </div>
-        </div>
+            }
+            ?>
+
+
+            <form action="queries.php?id_morceau=<?= $morceau['id_morceau']; ?>" method="POST">
+                <textarea class="color1" name="contenu" rows="5" cols="50"></textarea><br>
+                <input type="submit" class="submit" value="Ajouter un commentaire">
+            </form>
+        </div>    
     </div>
+</div>
+</div>
 </body>
 </html>

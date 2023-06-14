@@ -4,6 +4,8 @@ body {
     height: 100vh;
 }
 
+
+
 /*background-colors*/
 .background1 {
     background-color: #008080ff ;
@@ -166,6 +168,7 @@ input {
 nav {
     width: 300px;
     padding-left: 50px;
+    margin-top: 100px;
  }
 
 .element {
@@ -204,7 +207,7 @@ nav {
     flex-wrap: wrap;
     width: 1000px;
     margin: auto;
-    margin: 50px 200px;
+    margin: 50px 150px;
     position: absolute;
     overflow:hidden;
 }
@@ -236,7 +239,7 @@ h2, h3 {
 
 #precedent {
     
-    background-image: url('/spotizer/icones/precedent.svg');
+    background-image: url('/spotizer/icones/precedent.png');
     background-size: cover;
     width:100px;
     height: 100px;
@@ -249,7 +252,7 @@ h2, h3 {
 
 #suivant {
    
-    background-image: url('/spotizer/icones/suivant.svg');
+    background-image: url('/spotizer/icones/suivant.png');
     background-size: cover;
     width:100px;
     height: 100px;
@@ -272,4 +275,8 @@ h2, h3 {
     display: flex;
     align-items: center;
     height: 800px;
+}
+
+#menu {
+    box-shadow: 10px 0 20px 0 gray;
 }

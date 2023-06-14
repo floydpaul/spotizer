@@ -14,12 +14,11 @@ include('queries.php');
 </head>
 
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
+    
       <?php include('menu.php');?>
-    </div>
+    
     <div class="contener">
-        <div class="connexion background2 flex">
+        <div class="connexion  flex">
                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
         </div>
         <div class="pd-50 color1">

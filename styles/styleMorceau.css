@@ -92,6 +92,14 @@ body {
     padding: 50px;
 }
 
+.pd-left-50 {
+    padding-left: 50px;
+}
+
+.pd-left-100 {
+    padding-left: 100px;
+}
+
 textarea {
     border-color: #008080ff;
 }
@@ -170,7 +178,9 @@ input {
 nav {
     width: 300px;
     padding-left: 50px;
+    margin-top: 100px;
  }
+
 
 .element {
     display: flex;
@@ -284,7 +294,8 @@ input {
 
 .card-img-top {
     width: 300px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height: 300px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .titre {
@@ -297,4 +308,16 @@ input {
     cursor: pointer;
     font-weight: 600;
     text-decoration: none;
+}
+
+.audio {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    display: block;
+}
+
+#menu {
+    box-shadow: 10px 0 20px 0 gray;
 }
