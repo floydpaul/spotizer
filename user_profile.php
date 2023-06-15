@@ -28,9 +28,9 @@ include('queries.php');
                     <div class="inscription flex">
                         <h3><?= $_SESSION['date_inscription'];?></h3>
                         <h3><?php if ($_SESSION['artiste']==true) {
-                            echo 'artsite';
+                            echo 'Artiste';
                         } else {
-                            echo 'utilisateur';
+                            echo 'Utilisateur';
                         }
                          ?></h3>
                     </div>
@@ -43,7 +43,7 @@ include('queries.php');
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $utilisateur['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $utilisateur['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1 icon2"></a>       
                 </div>
             </div>
             <div id="commentaires">
@@ -54,14 +54,15 @@ include('queries.php');
                     <p><?= $commentaire['contenu']; ?> 
                     <?= $commentaire['date_publication']; ?>
                     <b><?= $commentaire['titre']; ?></b>
-                    <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon1"></a>
-                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a> 
+                    <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon2"></a>
+                
                 </p><br>
                 <?php
                 }
                 ?>
                           
                 </div>
+                <a href="modifier_profile.php">Modifier les informations</a>
             </div>
         </div>
     </div>

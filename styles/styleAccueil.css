@@ -246,6 +246,7 @@ h2, h3 {
     position: absolute;
     top: 400px;
     left: 400px;
+    cursor: pointer;
     
 
 }
@@ -259,6 +260,7 @@ h2, h3 {
     position: absolute;
     top: 400px;
     right: 100px;
+    cursor: pointer;
 
 }
 
@@ -274,6 +276,7 @@ h2, h3 {
 #slider {
     display: flex;
     align-items: center;
+    justify-content: center;
     height: 800px;
 }
 

@@ -22,7 +22,7 @@
                         <label>Changer la photo</label>
                         <input type="file" name="photo">
                     </div>
-                     <div class="container text-center">
+                    <div class="container text-center">
                         <label for="presentation" class="form-label">Modifier presentation</label>
                         <textarea  rows="5" cols="40" id="presentation" name="presentation"></textarea><br>
                     </div>
