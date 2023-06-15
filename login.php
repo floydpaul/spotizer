@@ -11,9 +11,9 @@
 
 	$user = $query->fetch();
 
-
-	if(!empty($user)){
-
+	$isPassCorrect = password_verify($mdp, $users['mdp']);
+	if(!empty($user) && $isPassCorrect == true){
+	
 		$_SESSION['id_utilisateur']=$user['id_utilisateur'];
 		$_SESSION['pseudo']= $user['pseudo'];
 		$_SESSION['email']= $user['email'];

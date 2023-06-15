@@ -28,8 +28,8 @@
                         <input type="text" name="auteur" class="form-control"><br>  
                     </div>
                     <div class=" text-center">
-                        <label for="jacquette" class="form-label">Jacquette</label><br>
-                        <input type="file" name="jacquette">
+                        <label for="jaquette" class="form-label">Jaquette</label><br>
+                        <input type="file" name="jaquette">
                     </div>
                     <div class=" text-center">
                         <label for="fichier" class="form-label">Son</label><br>

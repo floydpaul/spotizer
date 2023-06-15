@@ -21,9 +21,6 @@ include('queries.php');
         <div class="connexion background2 flex">
                 <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
                 <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
-        <div class="connexion  flex">
-               <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
-        </div>
         <div class="pd-50 color1">
             <div class="flex">
                 <div>

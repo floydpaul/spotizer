@@ -3,7 +3,7 @@
     if(isset ($_POST['email']) && isset ($_POST['identifiant']) && $_POST['mdp'] == $_POST['cmdp']){
         $email = strip_tags($_POST['email']);
         $pseudo = strip_tags($_POST['identifiant']);
-        $mdp= strip_tags($_POST['mdp']);
+        $mdp= password_hash(strip_tags($_POST['mdp']), PASSWORD_DEFAULT) ;
         $photo= $_FILES['photo'];
         $presentation = strip_tags($_POST['presentation']);
         var_dump($_FILES);
@@ -178,11 +178,12 @@ function deleteCom(){
 ?>
 
 <?php 
+session_start();
 function newSong(){
-    if(isset ($_POST['titre']) && isset ($_POST['auteur']) && isset ($_FILES['jacquette']) && isset ($_FILES['fichier']) && isset ($_POST['description'])){
+    if(isset ($_POST['titre']) && isset ($_POST['auteur']) && isset ($_FILES['jaquette']) && isset ($_FILES['fichier']) && isset ($_POST['description'])){
         $titre = strip_tags($_POST['titre']);
         $auteur = strip_tags($_POST['auteur']);
-        $jacquette= $_FILES['jacquette'];
+        $jaquette= $_FILES['jaquette'];
         $fichier= $_FILES['fichier'];
         $description = strip_tags($_POST['description']);
         var_dump($_FILES);
@@ -192,17 +193,17 @@ function newSong(){
     }
     include('bdd.php');
     // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
-    if (isset($_FILES['jacquette']) && $_FILES['jacquette']['error'] == 0){
-        $destination = ('images/jaquettes/' . $_FILES['jacquette']['name']);
+    if (isset($_FILES['jaquette']) && $_FILES['jaquette']['error'] == 0){
+        $destination = ('images/jaquettes/' . $_FILES['jaquette']['name']);
         // Testons si le fichier n'est pas trop gros
-        if ($_FILES['jacquette']['size'] <= 1000000)
+        if ($_FILES['jaquette']['size'] <= 1000000)
         {
 
                 // Testons si l'extension est autorisée
-                $fileInfo = pathinfo($_FILES['jacquette']['name']);
+                $fileInfo = pathinfo($_FILES['jaquette']['name']);
                 $extension = $fileInfo['extension'];
                 $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
-                $tmpName = $_FILES['jacquette']['tmp_name'];
+                $tmpName = $_FILES['jaquette']['tmp_name'];
                 if (in_array($extension, $allowedExtensions))
                 {
                         // On peut valider le fichier et le stocker définitivement
@@ -213,7 +214,7 @@ function newSong(){
     if (isset($_FILES['fichier']) && $_FILES['fichier']['error'] == 0){
         $destination2 = ('mp3/' . $_FILES['fichier']['name']);
         // Testons si le fichier n'est pas trop gros
-        if ($_FILES['fichier']['size'] <= 1000000)
+        if ($_FILES['fichier']['size'] <= 20000000)
         {
 
                 // Testons si l'extension est autorisée
@@ -224,10 +225,24 @@ function newSong(){
                 if (in_array($extension, $allowedExtensions))
                 {
                         // On peut valider le fichier et le stocker définitivement
-                    move_uploaded_file($tmpName, $destination);
+                    move_uploaded_file($tmpName, $destination2);
                 }
         }
     };
-}
+      //On prépare la commande sql d'insertion
+      $query = $db->prepare('INSERT INTO morceau(titre,auteur,mdp,description,jaquette,fichier,id_utilsateur) VALUES(:titre,:auteur,:mdp,:description,:jaquette,:fichier,:id_utilsateur)'); 
+                    
+      /*on lance la commande (query)*/
+$query->execute([
+  'titre'=>$titre,
+  'auteur'=>$auteur,
+  'mdp'=>$mdp,
+  'description'=>$description,
+  'jaquette'=>$_FILES['jaquette']['name'],
+  'fichier'=>$_FILES['fichier']['name'],
+  'id_utilsateur'=> $_SESSION['id_utilisateur']
+  ]);
+};
+
 ?>
 
