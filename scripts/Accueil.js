@@ -2,39 +2,33 @@ let precedent = document.getElementById('precedent');
 let suivant = document.getElementById('suivant');
 let contener = document.getElementById('contener');
 let test = document.querySelector('.flex.cards')
-let cinq = 0;
+let content =0;
 let cards = document.getElementsByClassName('card');
 let cardsLength = cards.length;
 console.log(cardsLength);
+console.log(cardsLength*200);
 
 suivant.addEventListener('click',()=>{
-	if(cinq>=(130*cardsLength)){
-		cinq=0;
-		contener.style.right=cinq+'px';
-	}
-
-	else {
 	
-	cinq+=1000;
-	contener.style.right=cinq+'px';
-	console.log(cinq);
-	}
-
+	content+=960;
 	
+	if(content>=(200*cardsLength)){
+		content=0;
+	}
+	
+	contener.style.right=content+'px';
+	console.log(content);
 })
 
 precedent.addEventListener('click',()=>{
-	if(cinq<=-(130*cardsLength)){
-		cinq=0;
-		contener.style.right=cinq+'px';
-	}
-
-	else {
 	
-	cinq-=1000;
-	contener.style.right=cinq+'px';
+	content-=960;
+	
+	if(content<=-(200*cardsLength)){
+		content=0;
 	}
-console.log(cinq);
+	
+	contener.style.right=content+'px';
 	
 })
 

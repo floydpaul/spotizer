@@ -3,7 +3,7 @@ session_start();
 include('bdd.php');
 
 /* requête pour récupérer tous les morceaux */
-$query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur');
+$query = $db->prepare('SELECT * FROM morceau');
 $query->execute();
 $morceaux = $query->fetchAll();
 
@@ -16,7 +16,7 @@ $categories = $query->fetchAll();
 /* requête pour récupérer tous les informations d'un morceau selon son identifiant */
 if(isset($_GET['id_morceau'])){
 	
-	$query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur WHERE id_morceau='.$_GET['id_morceau'].'');
+	$query = $db->prepare('SELECT * FROM morceau NATURAL  JOIN style NATURAL JOIN utilisateur WHERE id_morceau='.$_GET['id_morceau'].'');
 	$query->execute();
 	$morceau = $query->fetch();	
 }
@@ -48,7 +48,7 @@ if(isset($_POST['contenu'])){
 	$query->execute([
 		'date_publication' => date("Ymd"),
 		'contenu' => $_POST['contenu'],
-		'id_utilisateur' => 1,
+		'id_utilisateur' => $_SESSION['id_utilisateur'],
 		'id_morceau' => $_GET['id_morceau'],
 		]);
 

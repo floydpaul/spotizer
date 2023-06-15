@@ -14,14 +14,15 @@ include('queries.php');
 </head>
 
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
+    
       <?php include('menu.php');?>
-    </div>
+    
     <div class="contener">
         <div class="connexion background2 flex">
                 <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
                 <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+        <div class="connexion  flex">
+               <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
         </div>
         <div class="pd-50 color1">
             <div class="flex">
@@ -30,9 +31,9 @@ include('queries.php');
                     <div class="inscription flex">
                         <h3>Inscrit depuis le <p><?=$_SESSION['date_inscription'];?></p></h3>
                         <h3><?php if ($_SESSION['artiste']==true) {
-                            echo 'artiste';
+                            echo 'artsite';
                         } else {
-                            echo 'utilisateur';
+                            echo 'Utilisateur';
                         }
                          ?></h3>
                     </div>
@@ -45,7 +46,7 @@ include('queries.php');
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $utilisateur['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>       
+                    <p><?= $utilisateur['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1 icon2"></a>       
                 </div>
             </div>
             <div id="commentaires">
@@ -57,13 +58,14 @@ include('queries.php');
                     <?= $commentaire['date_publication']; ?>
                     <b><?= $commentaire['titre']; ?></b>
                     <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon1"></a>
-                     <a href="deleteCom.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/poubelle.svg" class="icon1"></a> 
+                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a> 
                 </p><br>
                 <?php
                 }
                 ?>
                           
                 </div>
+                <a href="modifier_profile.php">Modifier les informations</a>
             </div>
         </div>
     </div>

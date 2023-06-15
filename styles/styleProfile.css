@@ -158,11 +158,17 @@ input {
 
 
 .icon1 {
+    position: relative;
     background-color: #008080ff;
     height: 40px;
     width: 40px;
     border-radius: 50%;
-    margin: 0 10px;
+    right: 50px;
+}
+
+.icon2 {
+    top: 50px;
+    right: 950px;
 }
 
 .imguser {
@@ -177,6 +183,7 @@ input {
 nav {
     width: 300px;
     padding-left: 50px;
+    margin-top: 100px;
  }
 
 .element {
@@ -293,3 +300,6 @@ h1 {
     margin:20px 0;
 }
 
+#menu {
+    box-shadow: 10px 0 20px 0 gray;
+}
