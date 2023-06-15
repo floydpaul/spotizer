@@ -18,7 +18,7 @@ require_once('queries.php');
 <body class="flex">
    <?php include('menu.php')?>
     <div class="contener">
-        <div class="connexion background2 flex">
+        <div class="connexion flex">
             <?php 
             
                 if(!empty($_SESSION)){?>

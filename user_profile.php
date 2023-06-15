@@ -37,13 +37,13 @@ include('queries.php');
                 </div>   
                 <div>
                     <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="profile" class="imguser">
-                    <a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1"></a>      
+                      
                 </div>
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
                 <div class="flex">
-                    <p><?= $utilisateur['presentation']; ?></p><a href="modifier_profile.php"><img src="icones/modifier.svg" alt="modifier" class="icon1 icon2"></a>       
+                    <p><?= $utilisateur['presentation']; ?></p>       
                 </div>
             </div>
             <div id="commentaires">
@@ -54,15 +54,12 @@ include('queries.php');
                     <p><?= $commentaire['contenu']; ?> 
                     <?= $commentaire['date_publication']; ?>
                     <b><?= $commentaire['titre']; ?></b>
-                    <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon2"></a>
-                
-                </p><br>
+                    </p>
                 <?php
                 }
                 ?>
-                          
                 </div>
-                <a href="modifier_profile.php">Modifier les informations</a>
+                <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
             </div>
         </div>
     </div>
