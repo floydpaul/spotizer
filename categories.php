@@ -16,8 +16,7 @@ require_once('queries.php');
     <title>Spotizer</title>
 </head>
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
+    
         <?php include('menu.php'); ?>
     </div>
     <div class="contener">

@@ -12,14 +12,12 @@ include('queries.php');
     <title>Document</title>
 </head>
 <body class="flex">
-    <div class="background3">
-        <img class="height" src="icones/logo_spotizer.svg">
       
         <?php include('menu.php'); ?>
     
     </div>
     <section>
-        <div class="connexion background2 flex">
+        <div class="connexion  flex">
             <?php 
                 if(!empty($_SESSION)){?>
                     <a class="a2" href="user_profile.php">Mon profil</a>

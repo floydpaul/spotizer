@@ -19,16 +19,19 @@ include('queries.php');
     
     <div class="contener">
         <div class="connexion  flex">
+                <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
+                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+        <div class="connexion  flex">
                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
         </div>
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
-                    <h1><?= $utilisateur['pseudo'];?></h1>
+                    <h1><?=$_SESSION['pseudo']?></h1>
                     <div class="inscription flex">
-                        <h3><?= $utilisateur['date_inscription'];?></h3>
-                        <h3><?php if ($utilisateur['artiste']==true) {
-                            echo 'Artiste';
+                        <h3>Inscrit depuis le <p><?=$_SESSION['date_inscription'];?></p></h3>
+                        <h3><?php if ($_SESSION['artiste']==true) {
+                            echo 'artsite';
                         } else {
                             echo 'Utilisateur';
                         }
@@ -54,7 +57,13 @@ include('queries.php');
                     <p><?= $commentaire['contenu']; ?> 
                     <?= $commentaire['date_publication']; ?>
                     <b><?= $commentaire['titre']; ?></b>
+<!-- <<<<<<< HEAD
                     </p>
+=======
+                    <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon1"></a>
+                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a> 
+                </p><br>
+>>>>>>> fe02df082e5d58937bfd8b9911e479dadccae9bf -->
                 <?php
                 }
                 ?>
