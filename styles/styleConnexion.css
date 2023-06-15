@@ -65,7 +65,7 @@ body {
 .flex-center, .flex-center-col {
 	display: flex;
 	align-items: center;
-    padding-top: 150px;
+    padding-top: 100px;
 }
 .flex-center-col {
 	flex-direction: column;
@@ -109,10 +109,11 @@ textarea {
 
 input {
     width: 370px;
-    height: 40px;
     border-radius: 20px;
     margin: 20px;
     border: none;
+    font-size: 25px;
+    padding: 10px;
 }
 
 /*largeur et longueur de contenu*/
@@ -124,7 +125,7 @@ input {
     margin-left: 0px;
 }
 .height1 {
-    height: 60px ;
+    height: 150px ;
 }
 
 .width2 {

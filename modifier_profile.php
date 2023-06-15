@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-<header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
+    <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
     <main>
         <div class="flex-center-col background3">
             <div class="color1 background4 width1" style="margin-top: -35px;">
@@ -31,5 +31,7 @@
                     </div>
 
                 </form>
+            </div>    
+        </div>        
 </body>
 </html>

@@ -8,10 +8,10 @@
     <title>Inscription</title>
 </head>
 <body>
-     <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
+     <header><a href="accueil.php"><img class="height1" src="icones/logo_spotizer.svg"></a></header>
     <main>
-        <div class="flex-center-col background3">
-            <div class="color1 background4 width1" style="margin-top: -35px;">
+        <div class="flex-center-col">
+            <div class="color1 background4 formulaire width1">
                 <div class="container text-center">
                     <h1>Inscrivez vous gratuitement pour lancer la lecture</h1>
                 </div>
@@ -35,10 +35,10 @@
                     <div class=" text-center">
                         <input type="file" name="photo">
                     </div>
-                    <div class="flex">
+                    <!-- <div class="flex">
                         <input type="radio" name="statut" value="artiste" class="form-control" style="width: 50px; margin-left:175px; margin-top: 0px">
                         <label for="artiste" style="margin-top: 0px;">Artiste</label>
-                    </div>
+                    </div> -->
                      <div class="container text-center">
                         <label for="presentation" class="form-label">Veuillez vous présenter</label>
                         <textarea  rows="5" cols="40" id="presentation" name="presentation"></textarea><br>

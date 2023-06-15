@@ -58,7 +58,7 @@
                             // Testons si l'extension est autorisée
                             $fileInfo = pathinfo($_FILES['photo']['name']);
                             $extension = $fileInfo['extension'];
-                            $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                            $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png','jfif'];
                             $tmpName = $_FILES['photo']['tmp_name'];
                             if (in_array($extension, $allowedExtensions))
                             {

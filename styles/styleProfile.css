@@ -303,3 +303,21 @@ h1 {
 #menu {
     box-shadow: 10px 0 20px 0 gray;
 }
+
+.modifier {
+    width: 200px;
+    display: block;
+    background: #008080ff;
+    height: 30px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.modifier:hover {
+    text-decoration: none;
+    cursor: pointer;
+}

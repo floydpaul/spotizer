@@ -9,9 +9,9 @@
     <title>Connexion</title>
 </head>
 <body>
-    <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
+    <header><img class="height1" src="icones/logo_spotizer.svg"></header>
     <main>
-        <div class="h-100 flex-center-col background3">
+        <div class="h-100 flex-center-col">
             <div class=" background1 color4 width1 connexion">
                 <div class="container text-center"><h1>J'ai un compte Spotizer</h1></div>
                 
