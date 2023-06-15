@@ -58,7 +58,7 @@ if(isset($_POST['contenu'])){
 if (isset ($_GET['id_utilisateur'])) {
 	$query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur ='.$_GET['id_utilisateur'].'');
 	$query->execute();
-	$utilisateur = $query->fetchAll();
+	$utilisateur = $query->fetch();
 }
 /*requête pour récupérer les informations d'un profil selon son identifiant*/ 
 if (isset ($_SESSION['id_utilisateur'])) {
@@ -84,3 +84,7 @@ if (isset ($_GET['id_comment'])) {
 	$query->execute();
 	$comment = $query->fetch();
 }
+/*requête pour récupérer les informations d'un artiste selon son identifiant*/ 
+	$query = $db->prepare('SELECT * FROM utilisateur WHERE artiste = true');
+	$query->execute();
+	$artistes = $query->fetchAll();
