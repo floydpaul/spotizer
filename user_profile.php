@@ -20,16 +20,17 @@ include('queries.php');
     </div>
     <div class="contener">
         <div class="connexion background2 flex">
-               <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+                <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
+                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
         </div>
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
-                    <h1><?= $_SESSION['pseudo'];?></h1>
+                    <h1><?=$_SESSION['pseudo']?></h1>
                     <div class="inscription flex">
-                        <h3><?= $_SESSION['date_inscription'];?></h3>
+                        <h3>Inscrit depuis le <p><?=$_SESSION['date_inscription'];?></p></h3>
                         <h3><?php if ($_SESSION['artiste']==true) {
-                            echo 'artsite';
+                            echo 'artiste';
                         } else {
                             echo 'utilisateur';
                         }
@@ -56,7 +57,7 @@ include('queries.php');
                     <?= $commentaire['date_publication']; ?>
                     <b><?= $commentaire['titre']; ?></b>
                     <a href="modifier_comment.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/modifier.svg" class="icon1"></a>
-                     <a href="#"><img src="icones/poubelle.svg" class="icon1"></a> 
+                     <a href="deleteCom.php?id_comment=<?= $commentaire['id_commentaire'];?>"><img src="icones/poubelle.svg" class="icon1"></a> 
                 </p><br>
                 <?php
                 }

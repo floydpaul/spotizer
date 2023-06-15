@@ -166,5 +166,68 @@ function updateComment(){
             'id_commentaire' =>$_GET['id_comment'],
         ]);
 }
+?>
+<?php 
+function deleteCom(){
+    include('bdd.php');
+    $query = $db ->prepare('DELETE FROM commentaires WHERE id_commentaire = :id_commentaire');
+    $query->execute([
+        'id_commentaire'=>$_GET['id_comment'],
+    ]);
+}
+?>
 
+<?php 
+function newSong(){
+    if(isset ($_POST['titre']) && isset ($_POST['auteur']) && isset ($_FILES['jacquette']) && isset ($_FILES['fichier']) && isset ($_POST['description'])){
+        $titre = strip_tags($_POST['titre']);
+        $auteur = strip_tags($_POST['auteur']);
+        $jacquette= $_FILES['jacquette'];
+        $fichier= $_FILES['fichier'];
+        $description = strip_tags($_POST['description']);
+        var_dump($_FILES);
+    }
+    else {
+        die('Il manque des données pour avancer');
+    }
+    include('bdd.php');
+    // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+    if (isset($_FILES['jacquette']) && $_FILES['jacquette']['error'] == 0){
+        $destination = ('images/jaquettes/' . $_FILES['jacquette']['name']);
+        // Testons si le fichier n'est pas trop gros
+        if ($_FILES['jacquette']['size'] <= 1000000)
+        {
+
+                // Testons si l'extension est autorisée
+                $fileInfo = pathinfo($_FILES['jacquette']['name']);
+                $extension = $fileInfo['extension'];
+                $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                $tmpName = $_FILES['jacquette']['tmp_name'];
+                if (in_array($extension, $allowedExtensions))
+                {
+                        // On peut valider le fichier et le stocker définitivement
+                    move_uploaded_file($tmpName, $destination);
+                }
+        }
+    };
+    if (isset($_FILES['fichier']) && $_FILES['fichier']['error'] == 0){
+        $destination2 = ('mp3/' . $_FILES['fichier']['name']);
+        // Testons si le fichier n'est pas trop gros
+        if ($_FILES['fichier']['size'] <= 1000000)
+        {
+
+                // Testons si l'extension est autorisée
+                $fileInfo = pathinfo($_FILES['fichier']['name']);
+                $extension = $fileInfo['extension'];
+                $allowedExtensions = ['mp3'];
+                $tmpName = $_FILES['fichier']['tmp_name'];
+                if (in_array($extension, $allowedExtensions))
+                {
+                        // On peut valider le fichier et le stocker définitivement
+                    move_uploaded_file($tmpName, $destination);
+                }
+        }
+    };
+}
+?>
 
