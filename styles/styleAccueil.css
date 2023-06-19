@@ -217,7 +217,10 @@ nav {
     border-radius: 20px;
     margin: 20px;
 }
-
+ .card a {
+    text-decoration: none;
+ }
+ 
 .card img {
     border-radius: 20px 20px 0 0;
     object-fit: cover;
