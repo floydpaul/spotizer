@@ -17,8 +17,7 @@ include('queries.php');
     <?php include('menu.php');?>
     <section>
         <div class="connexion flex">
-            <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
-            <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+          <?php include('session.php'); ?>
         </div>    
         <div class="pd-50 color1">
             <div class="flex">

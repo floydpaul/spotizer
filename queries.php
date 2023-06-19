@@ -60,12 +60,13 @@ if (isset ($_GET['id_utilisateur'])) {
 	$query->execute();
 	$utilisateur = $query->fetch();
 }
-/*requête pour récupérer les informations d'un profil selon son identifiant*/ 
-if (isset ($_SESSION['id_utilisateur'])) {
+
+else if (isset ($_SESSION['id_utilisateur'])) {
 	$query = $db->prepare('SELECT * FROM utilisateur WHERE id_utilisateur ='.$_SESSION['id_utilisateur'].'');
 	$query->execute();
 	$utilisateur = $query->fetch();
 }
+
 /*requête pour récuperer les commentaires faits par un utilisateur*/
 if (isset ($_GET['id_utilisateur'])) {
 	$query = $db->prepare('SELECT * FROM commentaires LEFT JOIN morceau ON commentaires.id_morceau= morceau.id_morceau WHERE commentaires.id_utilisateur='.$_GET['id_utilisateur'].'');
