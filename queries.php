@@ -87,6 +87,6 @@ if (isset ($_GET['id_comment'])) {
 	$comment = $query->fetch();
 }
 /*requête pour récupérer les informations d'un artiste selon son identifiant*/ 
-	$query = $db->prepare('SELECT * FROM utilisateur WHERE artiste = true');
+	$query = $db->prepare('SELECT * FROM utilisateur' );
 	$query->execute();
-	$artistes = $query->fetchAll();
+$artistes = $query->fetchAll();
