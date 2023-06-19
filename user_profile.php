@@ -18,6 +18,7 @@ include('queries.php');
       <?php include('menu.php');?>
     
     <div class="contener">
+<<<<<<< HEAD
          <div class="connexion  flex">
             <?php 
                 if(!empty($_SESSION)){?>
@@ -34,6 +35,11 @@ include('queries.php');
             ?>
             
         </div>
+=======
+        <div class="connexion background2 flex">
+                <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
+                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+>>>>>>> 4e3added37e0d7149728e23da3c6eb9828c54f8b
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
