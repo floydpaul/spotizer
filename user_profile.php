@@ -14,15 +14,15 @@ include('queries.php');
 </head>
 
 <body class="flex">
-    
     <?php include('menu.php');?>
     <section>
         <div class="connexion flex">
-            <?php include('session.php'); ?>    
-        </div>
+            <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
+            <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+        </div>    
         <div class="pd-50 color1">
             <div class="flex">
-                <div>
+               <div>
                     <h1><?= $utilisateur['pseudo'];?></h1>
                     <div class="inscription flex">
                         <h3><?= $utilisateur['date_inscription'];?></h3>
@@ -30,7 +30,6 @@ include('queries.php');
                 </div>   
                 <div>
                     <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="profile" class="imguser">
-                      
                 </div>
             </div>    
             <div id="presentation">
@@ -42,25 +41,23 @@ include('queries.php');
             <div id="commentaires">
                 <h3>Commentaires</h3>
                 <div class="comments">
-                <?php
-               
-                foreach($comments as $commentaire){?>
-                    <p><?= $commentaire['contenu']; ?> 
-                    <?= $commentaire['date_publication']; ?>
-                    <b><a href="morceau.php?id_morceau=<?= $commentaire['id_morceau']; ?>"><?= $commentaire['titre']; ?></a></b>
-                    </p>
-                <?php
-                }
-                ?>
+                    <?php
+                   
+                    foreach($comments as $commentaire){?>
+                        <p><?= $commentaire['contenu']; ?> 
+                        <?= $commentaire['date_publication']; ?>
+                        <b><a href="morceau.php?id_morceau=<?= $commentaire['id_morceau']; ?>"><?= $commentaire['titre']; ?></a></b>
+                        </p>
+                    <?php
+                    }
+                    ?>
                 </div>
-                 
                     <?php 
                         if(!empty($_SESSION)){?>
                         <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
                         <?php
                         }
                     ?>
-                
             </div>
         </div>
     </section>

@@ -220,6 +220,7 @@ nav {
 
 .card img {
     border-radius: 20px 20px 0 0;
+    object-fit: cover;
 }
 
 h2, h3 {

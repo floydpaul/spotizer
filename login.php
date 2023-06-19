@@ -4,6 +4,8 @@
 	require_once('bdd.php');
 
 
+
+
 	$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id ');
 	$query ->execute([
 		'id' => $_POST['identifiant'],
