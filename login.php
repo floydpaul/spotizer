@@ -2,21 +2,13 @@
 	session_start();
 
 	require_once('bdd.php');
-<<<<<<< HEAD
-	$hash=password_hash($_POST['mdp'], PASSWORD_DEFAULT);
-	$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id AND mdp = :mdp');
-	$query ->execute([
-		'id' => $_POST['identifiant'],
-		'mdp'=> $_POST['mdp']]);
 
-
-=======
 
 	$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id ');
 	$query ->execute([
 		'id' => $_POST['identifiant'],
 	]);
->>>>>>> 4e3added37e0d7149728e23da3c6eb9828c54f8b
+
 
 	$user = $query->fetch();
 	$isPassCorrect = password_verify($_POST['mdp'], $user['mdp']);

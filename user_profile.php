@@ -15,31 +15,11 @@ include('queries.php');
 
 <body class="flex">
     
-      <?php include('menu.php');?>
-    
-    <div class="contener">
-<<<<<<< HEAD
-         <div class="connexion  flex">
-            <?php 
-                if(!empty($_SESSION)){?>
-                    <a class="a2" href="user_profile.php">Mon profil</a>
-                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-                <?php
-                }
-                else {?>
-                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
-                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-                <?php
-                }
-            
-            ?>
-            
+    <?php include('menu.php');?>
+    <section>
+        <div class="connexion flex">
+            <?php include('session.php'); ?>    
         </div>
-=======
-        <div class="connexion background2 flex">
-                <a class="a2" href="nouveaumorceau.php">Nouveau morceau</a>
-                <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
->>>>>>> 4e3added37e0d7149728e23da3c6eb9828c54f8b
         <div class="pd-50 color1">
             <div class="flex">
                 <div>
@@ -83,6 +63,6 @@ include('queries.php');
                 
             </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>
