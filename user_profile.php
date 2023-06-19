@@ -1,7 +1,7 @@
 <?php 
 include('queries.php');
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +18,21 @@ include('queries.php');
       <?php include('menu.php');?>
     
     <div class="contener">
-        <div class="connexion  flex">
-               <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>  
+         <div class="connexion  flex">
+            <?php 
+                if(!empty($_SESSION)){?>
+                    <a class="a2" href="user_profile.php">Mon profil</a>
+                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
+                <?php
+                }
+                else {?>
+                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
+                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
+                <?php
+                }
+            
+            ?>
+            
         </div>
         <div class="pd-50 color1">
             <div class="flex">
@@ -27,12 +40,6 @@ include('queries.php');
                     <h1><?= $utilisateur['pseudo'];?></h1>
                     <div class="inscription flex">
                         <h3><?= $utilisateur['date_inscription'];?></h3>
-                        <h3><?php if ($utilisateur['artiste']==true) {
-                            echo 'Artiste';
-                        } else {
-                            echo 'Utilisateur';
-                        }
-                         ?></h3>
                     </div>
                 </div>   
                 <div>
@@ -48,18 +55,26 @@ include('queries.php');
             </div>
             <div id="commentaires">
                 <h3>Commentaires</h3>
-                <div class="flex comments">
+                <div class="comments">
                 <?php
+               
                 foreach($comments as $commentaire){?>
                     <p><?= $commentaire['contenu']; ?> 
                     <?= $commentaire['date_publication']; ?>
-                    <b><?= $commentaire['titre']; ?></b>
+                    <b><a href="morceau.php?id_morceau=<?= $commentaire['id_morceau']; ?>"><?= $commentaire['titre']; ?></a></b>
                     </p>
                 <?php
                 }
                 ?>
                 </div>
-                <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
+                 
+                    <?php 
+                        if(!empty($_SESSION)){?>
+                        <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
+                        <?php
+                        }
+                    ?>
+                
             </div>
         </div>
     </div>

@@ -57,7 +57,7 @@ require_once('queries.php');
                         <tr>
                 			<td><img src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="morceau"></td>
                             <td><a href="/spotizer/morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></td>
-                            <td><?= $morceau['pseudo']; ?></td>
+                            <td><?= $morceau['auteur']; ?></td>
                         </tr>
             		<?php
             		}

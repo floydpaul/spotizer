@@ -2,12 +2,13 @@
 	session_start();
 
 	require_once('bdd.php');
-
+	$hash=password_hash($_POST['mdp'], PASSWORD_DEFAULT);
 	$query = $db ->prepare('SELECT * FROM utilisateur WHERE pseudo = :id AND mdp = :mdp');
 	$query ->execute([
 		'id' => $_POST['identifiant'],
-		'mdp' =>$_POST['mdp']
-	]);
+		'mdp'=> $_POST['mdp']]);
+
+
 
 	$user = $query->fetch();
 

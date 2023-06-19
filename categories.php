@@ -21,19 +21,7 @@ require_once('queries.php');
     </div>
     <div class="contener">
         <div class="connexion flex">
-            <?php 
-            
-                if(!empty($_SESSION)){?>
-                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-                <?php
-                }
-                else {?>
-                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
-                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-                <?php
-                }
-            
-            ?>
+            <?php include('session.php'); ?>
             
         </div>
         <div class="flex cards">

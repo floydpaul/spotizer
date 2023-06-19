@@ -300,6 +300,11 @@ h1 {
     margin:20px 0;
 }
 
+.comments a {
+    text-decoration: none;
+    color:#008080ff;;
+}
+
 #menu {
     box-shadow: 10px 0 20px 0 gray;
 }

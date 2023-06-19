@@ -40,10 +40,10 @@ require_once('queries.php');
                 <div class="flex">
                     <img  src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="card-img-top img-thumbnail" alt="" >
                     <div class="pd-left-50">                   
-                        <h1><?= $morceau['auteur']; ?></h1>
-                        <h2 class="titre"><?= $morceau['titre']; ?></h2>
-                        <h3><?= $morceau['nom']; ?></h3>
-                        <h4>Ajouté par <?=$morceau['pseudo']; ?></h4>
+                        <h1><?= $morceau['titre']; ?></h1>
+                        <h2 class="titre"><?= $morceau['auteur']; ?></h2>
+                        <h3><a href="categorie.php?id_categorie=<?= $morceau['id_style']; ?>"><?= $morceau['nom']; ?></a></h3>
+                        <h4>Ajouté par <a href="user_profile.php?id_utilisateur=<?= $morceau['id_utilisateur']; ?>"><?=$morceau['pseudo']; ?></a></h4>
                         <audio controls src="mp3/<?= $morceau['fichier']; ?>"></audio>
                     </div>    
                 </div>
@@ -58,7 +58,7 @@ require_once('queries.php');
                 <?php
                 foreach($commentaires as $commentaire){?>
                     <p><?= $commentaire['contenu']; ?> 
-                    <b><?= $commentaire['pseudo']; ?></b> 
+                    <b><a href="user_profile.php?id_utilisateur=<?= $commentaire['id_utilisateur']; ?>"><?= $commentaire['pseudo']; ?></a></b> 
                     <?= $commentaire['date_publication']; ?>
                 </p>
                 <?php
