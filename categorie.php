@@ -38,7 +38,9 @@ require_once('queries.php');
             ?>
         </div>
         <section>
+            <?php if(!empty($morceaux)){?>
             <div class="flex">
+
             	<img src="images/styles/<?= $morceaux[0]['vignette']; ?>" class="categorie">
                 <h1><?= $morceaux[0]['nom']; ?></h1>
             </div>
@@ -64,6 +66,12 @@ require_once('queries.php');
             	?>
                 </tbody>
                 </table>
+                <?php
+                } 
+                else {
+                    echo "<h2>Désolé, il n'y a pas encore de morceaux publiés dans ce style.</h2>"; 
+                }
+                ?>
         </section>    
     </div>
 </body>
