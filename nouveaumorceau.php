@@ -19,7 +19,7 @@ require_once('queries.php');
  
     <main>
         <div class="flex-center-col background3">
-            <div class="color1 background4 width1" style="margin-top: -35px;">
+            <div class="color1 background4 width1 formulaire" style="margin-top: -35px;">
                 <div class="container text-center">
                     <h1>Ajoutez un morceau</h1>
                 </div>
