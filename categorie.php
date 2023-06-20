@@ -56,7 +56,7 @@ require_once('queries.php');
             		foreach($morceaux as $morceau){?>
                         <tr>
                 			<td><img src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="morceau"></td>
-                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></td>
+                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>" class="gras"><?= $morceau['titre']; ?></a></td>
                             <td><?= $morceau['auteur']; ?></td>
                         </tr>
             		<?php

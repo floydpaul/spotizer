@@ -4,6 +4,10 @@ body {
     height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: #008080ff;
+}
 /*background-colors*/
 .background1 {
     background-color: #008080ff ;

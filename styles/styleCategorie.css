@@ -1,5 +1,15 @@
 section {
 	margin: 50px;
+	color: #008080ff;
+}
+
+a {
+	text-decoration: none;
+	color: #008080ff;
+}
+
+.gras {
+	font-weight: 600;
 }
 
 .cards {

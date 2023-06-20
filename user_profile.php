@@ -17,7 +17,7 @@ include('queries.php');
     <?php include('menu.php');?>
     <section>
         <div class="connexion flex">
-          <?php include('session.php'); ?>
+          <?php include('session_profile.php'); ?>
         </div>    
         <div class="pd-50 color1">
             <div class="flex">

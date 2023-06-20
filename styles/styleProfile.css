@@ -194,9 +194,10 @@ nav {
      font-weight:200;
 }
 
-a:hover {
-    text-decoration: underline;
+.a2:hover {
+  
     cursor: pointer;
+    font-weight: 600;
 }
 
 .connexion {
@@ -205,6 +206,7 @@ a:hover {
     align-items: center;
     width: 1550px;
 }
+
 
 .contener {
     width: 100%;
@@ -237,7 +239,7 @@ h2,h3 {
 .connexion a {
      margin: 10px 20px;
      height: 30px;
-     width: 130px;
+     width: 150px;
      line-height: 30px;
      text-align: center;
 }
