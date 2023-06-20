@@ -44,16 +44,17 @@ require_once('queries.php');
                         <label for="description" class="form-label">Description</label>
                         <textarea  rows="5" cols="40" id="description" name="description"></textarea><br>
                     </div>
-                    <div class="container text-center">
-                    <select name="Categorie" size="" multiple >
-                    <?php
-                foreach($categories as $categorie){?>
-                    <option value="<?=$categorie['id_style']?>"><?=$categorie['nom']?></option>
-                </p>
-                <?php
-            }
-            ?>
-                    </select>
+                    <div class="container text-center select">
+                            <label for="categorie">Choisissez un style</label>    
+                            <select name="Categorie" size=""  id="categorie">
+                            <?php
+                        foreach($categories as $categorie){?>
+                            <option value="<?=$categorie['id_style']?>"><?=$categorie['nom']?></option>
+                        </p>
+                        <?php
+                         }
+                         ?>
+                            </select>
                     </div>
                     <div  class="d-grid gap-2 col-6 mx-auto">
                         <input type="submit" class="submit" value="Ajouter un morceau">
