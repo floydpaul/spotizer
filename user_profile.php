@@ -1,5 +1,6 @@
 <?php 
 include('queries.php');
+
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ include('queries.php');
                     ?>
                 </div>
                     <?php 
-                        if(!empty($_SESSION)){?>
+                        if(isset($_SESSION['id_utilisateur']) AND $_GET['id_utilisateur']==$_SESSION['id_utilisateur']){?>
                         <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
                         <?php
                         }

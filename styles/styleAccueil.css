@@ -202,10 +202,8 @@ nav {
 }
 
 .cards {
-    justify-content: center;
-    padding: 40px;
     flex-wrap: wrap;
-    width: 1000px;
+    width: 1200px;
     margin: auto;
     margin: 50px 150px;
     position: absolute;
