@@ -2,6 +2,7 @@
 
 if(!empty($_SESSION)){?>
 	<a class="a2" href="nouveaumorceau.php">Ajouter un morceau</a>
+	<a class="a2" href="nouvelleplaylist.php">Créer playlist</a>
 	<a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
 	<?php
 }

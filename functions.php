@@ -201,5 +201,47 @@ include('bdd.php');
             ]);
             };
 
+    function newPlaylist(){
+        session_start();
+        global $db;
+        if(isset ($_POST['nom']) && isset ($_FILES['cover'])){
+            $nom = strip_tags($_POST['nom']);
+            $cover= $_FILES['cover'];
+        }
+        else {
+            die('Il manque des données pour avancer');
+        }
+        // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
+        if (isset($_FILES['cover']) && $_FILES['cover']['error'] == 0){
+            $destination = ('images/jaquettes/' . $_FILES['cover']['name']);
+            // Testons si le fichier n'est pas trop gros
+            if ($_FILES['cover']['size'] <= 1000000)
+            {
+
+                    // Testons si l'extension est autorisée
+                    $fileInfo = pathinfo($_FILES['cover']['name']);
+                    $extension = $fileInfo['extension'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $tmpName = $_FILES['cover']['tmp_name'];
+                    if (in_array($extension, $allowedExtensions))
+                    {
+                            // On peut valider le fichier et le stocker définitivement
+                        move_uploaded_file($tmpName, $destination);
+                    }
+            }
+        };
+         //On prépare la commande sql d'insertion
+         $query = $db->prepare('INSERT INTO playlist(nom,auteur,description,cover,fichier,id_utilisateur,id_style) VALUES(:nom,:auteur,:description,:cover,:fichier,:id_utilisateur,:id_style)'); 
+              
+         /*on lance la commande (query)*/
+             $query->execute([
+             'nom'=>$nom,
+             'description'=>$description,
+             'cover'=>$_FILES['cover']['name'],
+             'id_utilisateur'=> $_SESSION['id_utilisateur'],
+             ]);
+        
+    }
+
 ?>
 

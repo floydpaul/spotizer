@@ -90,3 +90,7 @@ if (isset ($_GET['id_comment'])) {
 	$query = $db->prepare('SELECT * FROM utilisateur');
 	$query->execute();
 	$artistes = $query->fetchAll();
+/*requête pour récupérer les informations d'un artiste selon son identifiant*/ 
+$query = $db->prepare('SELECT * FROM playlist');
+$query->execute();
+$playlist = $query->fetchAll();
