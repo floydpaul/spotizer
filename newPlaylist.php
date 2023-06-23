@@ -1,5 +1,5 @@
 <?php 
 include('functions.php');
-newPlaylist();
-header('Location: playlist.php');
+$id=newPlaylist();
+header('Location:creationplaylist.php?id_playlist='.$id);
 ?>

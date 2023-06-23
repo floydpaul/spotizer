@@ -12,7 +12,6 @@ require_once('queries.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
     <link rel="stylesheet" type="text/css" href="styles/styleCategorie.css">
-
     <title>Spotizer</title>
 </head>
 <body class="flex">
@@ -38,38 +37,39 @@ require_once('queries.php');
             ?>
         </div>
         <section>
-            <?php if(!empty($playlists)){?>
             <div class="flex">
-
             	<img src="images/covers/<?= $playlist['cover']; ?>" class="categorie">
                 <h1><?= $playlist['nom']; ?></h1>
             </div>
+            <form name="playlist" method="post" enctype="multipart/form-data" action="ajouterPlaylist.php?id_playlist=<?= $playlist['id_playlist'];?>">
                 <table>
                     <thead>
                         <tr>
                             <th></th>
                             <th>Titre</th>
                             <th>Artiste</th>
+                            <th>Ajouter à la playlist</th>
                         </tr>
                     </thead>
                     <tbody>
             	<?php
 
-            		foreach($playlists as $playlist){?>
+            		foreach($morceaux as $morceau){?>
                         <tr>
-                			<td><img src="images/jaquettes/<?= $playlist['jaquette']; ?>" class="morceau"></td>
-                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $playlist['id_morceau']; ?>" class="gras"><?= $playlist['titre']; ?></a></td>
-                            <td><?= $playlist['auteur']; ?></td>
-                            <td><audio controls src="mp3/<?= $playlist['fichier']; ?>"></audio></td>
+                			<td><img src="images/jaquettes/<?= $morceau['jaquette']; ?>" class="morceau"></td>
+                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>" class="gras"><?= $morceau['titre']; ?></a></td>
+                            <td><?= $morceau['auteur']; ?></td>
+                            <td><input type="checkbox" id="song" name="song[]" value="<?= $morceau['id_morceau']; ?>" >
                         </tr>
             		<?php
             		}
             	?>
                 </tbody>
                 </table>
-                <?php
-                }
-                ?>
+                <div  class="d-grid gap-2 col-6 mx-auto">
+                        <input type="submit" class="submit" value="Ajouter à la playlist">
+                    </div>
+            </form> 
         </section>    
     </div>
 </body>

@@ -213,11 +213,10 @@ include('bdd.php');
         }
         // Testons si le fichier a bien été envoyé et s'il n'y a pas d'erreur
         if (isset($_FILES['cover']) && $_FILES['cover']['error'] == 0){
-            $destination = ('images/jaquettes/' . $_FILES['cover']['name']);
+            $destination = ('images/covers/' . $_FILES['cover']['name']);
             // Testons si le fichier n'est pas trop gros
-            if ($_FILES['cover']['size'] <= 1000000)
+            if ($_FILES['cover']['size'] <= 20000000)
             {
-
                     // Testons si l'extension est autorisée
                     $fileInfo = pathinfo($_FILES['cover']['name']);
                     $extension = $fileInfo['extension'];
@@ -231,16 +230,39 @@ include('bdd.php');
             }
         };
          //On prépare la commande sql d'insertion
-         $query = $db->prepare('INSERT INTO playlist(nom,auteur,description,cover,fichier,id_utilisateur,id_style) VALUES(:nom,:auteur,:description,:cover,:fichier,:id_utilisateur,:id_style)'); 
+         $query = $db->prepare('INSERT INTO playlist(nom,cover,id_utilisateur) VALUES(:nom,:cover,:id_utilisateur)'); 
               
          /*on lance la commande (query)*/
              $query->execute([
              'nom'=>$nom,
-             'description'=>$description,
              'cover'=>$_FILES['cover']['name'],
              'id_utilisateur'=> $_SESSION['id_utilisateur'],
              ]);
+             return $db->lastInsertId();
         
+    }
+
+    function ajouterPlaylist(){
+        global $db;
+        var_dump($_POST);
+        if ($_POST['song']) {
+            foreach($_POST['song'] as $id_morceau){
+                //On prépare la commande sql d'insertion
+             $query = $db->prepare('INSERT INTO posséder(id_morceau,id_playlist) VALUES(:id_morceau,:id_playlist)'); 
+              
+             /*on lance la commande (query)*/
+                 $query->execute([
+                 'id_morceau'=>$id_morceau,
+                 'id_playlist'=> $_GET['id_playlist'],
+                 ]);
+            }
+             
+        }
+        else {
+            echo "Ajouter au moins un morceau pour créer une playlist";
+        }
+        
+            
     }
 
 ?>

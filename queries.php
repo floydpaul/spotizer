@@ -19,6 +19,7 @@ if(isset($_GET['id_morceau'])){
 	$query = $db->prepare('SELECT * FROM morceau NATURAL  JOIN style NATURAL JOIN utilisateur WHERE id_morceau='.$_GET['id_morceau'].'');
 	$query->execute();
 	$morceau = $query->fetch();	
+	var_dump($morceau);
 }
 
 /* requête pour récupérer les informations d'une catégorie */
@@ -90,7 +91,20 @@ if (isset ($_GET['id_comment'])) {
 	$query = $db->prepare('SELECT * FROM utilisateur');
 	$query->execute();
 	$artistes = $query->fetchAll();
-/*requête pour récupérer les informations d'un artiste selon son identifiant*/ 
-$query = $db->prepare('SELECT * FROM playlist');
-$query->execute();
-$playlist = $query->fetchAll();
+/*requête pour récupérer les informations d'une playlist selon son identifiant*/
+if (isset ($_GET['id_playlist'])){
+	$query = $db->prepare('SELECT * FROM playlist WHERE id_playlist ='.$_GET['id_playlist'].'');
+	$query->execute();
+	$playlist = $query->fetch();
+} 
+/*requête pour récupérer les informations d'une playlist */
+	$query = $db->prepare('SELECT * FROM playlist NATURAL JOIN utilisateur');
+	$query->execute();
+	$playlists = $query->fetchall();
+
+/*requête pour récupérer les informations d'une playlist selon son identifiant*/
+if (isset ($_GET['id_playlist'])){
+	$query = $db->prepare('SELECT * FROM posséder NATURAL JOIN morceau WHERE posséder.id_playlist ='.$_GET['id_playlist'].'');
+	$query->execute();
+	$playlists = $query->fetchall();
+} 

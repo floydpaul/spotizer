@@ -12,7 +12,6 @@ require_once('queries.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
     <link rel="stylesheet" type="text/css" href="styles/styleCategorie.css">
-
     <title>Spotizer</title>
 </head>
 <body class="flex">
@@ -38,38 +37,27 @@ require_once('queries.php');
             ?>
         </div>
         <section>
-            <?php if(!empty($playlists)){?>
-            <div class="flex">
-
-            	<img src="images/covers/<?= $playlist['cover']; ?>" class="categorie">
-                <h1><?= $playlist['nom']; ?></h1>
-            </div>
                 <table>
                     <thead>
                         <tr>
                             <th></th>
-                            <th>Titre</th>
-                            <th>Artiste</th>
+                            <th>Nom</th>
+                            <th>Créée par</th>
                         </tr>
                     </thead>
                     <tbody>
             	<?php
-
             		foreach($playlists as $playlist){?>
                         <tr>
-                			<td><img src="images/jaquettes/<?= $playlist['jaquette']; ?>" class="morceau"></td>
-                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $playlist['id_morceau']; ?>" class="gras"><?= $playlist['titre']; ?></a></td>
-                            <td><?= $playlist['auteur']; ?></td>
-                            <td><audio controls src="mp3/<?= $playlist['fichier']; ?>"></audio></td>
+                			<td><img src="images/covers/<?= $playlist['cover']; ?>" class="morceau"></td>
+                            <td><a href="/spotizer/playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
+                            <td><?= $playlist['pseudo']; ?></td>
                         </tr>
             		<?php
             		}
             	?>
                 </tbody>
                 </table>
-                <?php
-                }
-                ?>
         </section>    
     </div>
 </body>
