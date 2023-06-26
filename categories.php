@@ -25,7 +25,7 @@ require_once('queries.php');
             <?php
             foreach($categories as $categorie){?>
                 <div class="card">
-                   <img src="images/styles/<?= $categorie['vignette']; ?>" class="imgindex">
+                   <img src="images/styles/<?= $categorie['jaquette']; ?>" class="imgindex">
                    <h3><a href="categorie.php?id_categorie=<?= $categorie['id_style']; ?>"><?= $categorie['nom']; ?></a></h3>
                 </div>
             <?php

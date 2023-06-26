@@ -26,7 +26,7 @@ require_once('queries.php');
                 <form name="inscription" method="post" enctype="multipart/form-data" action="newSong.php">
                     <div class="container text-center">
                         <label for="titre" class="form-label">Titre</label><br>
-                        <input type="mail" name="titre" class="form-control"><br>
+                        <input type="text" name="titre" class="form-control"><br>
                     </div>
                     <div class="container text-center">
                         <label for="auteur" class="form-label">Auteur</label><br>
