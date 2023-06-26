@@ -264,6 +264,23 @@ include('bdd.php');
         
             
     }
+    function mailto(){
+        if ( isset($_POST['email']) && !empty($_POST['email'])) {
+                $dest = $_POST['email'];
+                $objet = "Inscription à Spotizer";
+                $message = "Bonjour\n Vous êtes inscrit sur Spotizer.\n Vous pouvez maintenant écouter de la musique. \n Cordialement.";
+                $entetes = "noreply@spotizer.alwaysdata.net/";
+                $entetes.="Content-Type: text/html; charset=iso-8859-1";
+        } 
+        $mail = mail($dest, $objet, $message,$entetes);
+        if ($mail == true) {
+                header('Location: index.php');
+        } 
+                else {
+                echo'Entrez une adresse mail';
+        };
+     
+}
 
 ?>
 
