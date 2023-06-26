@@ -8,7 +8,7 @@
     <title>Inscription</title>
 </head>
 <body>
-     <header><a href="accueil.php"><img class="height1" src="icones/logo_spotizer.svg"></a></header>
+     <header><a href="index.php"><img class="height1" src="icones/logo_spotizer.svg"></a></header>
     <main>
         <div class="flex-center-col">
             <div class="color1 background4 formulaire width1">

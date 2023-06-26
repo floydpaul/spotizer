@@ -31,7 +31,7 @@
 			echo "Les identifiants ne sont pas valides.";
 		}	
 	
-		 header('Location: accueil.php');
+		 header('Location: index.php');
 	} else {
 		echo "Entrez un mot de passe valide";
 	}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="71.888481mm"
+   height="50.651691mm"
+   viewBox="0 0 71.888481 50.651691"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <rect
+       x="132.77115"
+       y="233.35535"
+       width="273.58902"
+       height="108.63094"
+       id="rect6252" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5982">
+      <rect
+         style="opacity:0.914;fill:#ffff00;fill-opacity:1;stroke-width:0.867569;stroke-linecap:round;stroke-linejoin:round"
+         id="rect5984"
+         width="88.696281"
+         height="56.579948"
+         x="5.2690859"
+         y="6.774539"
+         ry="9.7854452" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer1"
+     style="display:inline;fill:#ffffff;fill-opacity:1"
+     clip-path="url(#clipPath5982)"
+     transform="translate(-13.303036,-8.6705187)">
+    <g
+       id="g3057"
+       transform="translate(-7.5003457,-42.116562)"
+       style="fill:#ffffff;fill-opacity:1">
+      <path
+         id="path844"
+         style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583"
+         d="M 46.128967,50.919373 A 25.193548,25.193548 0 0 0 20.935673,76.112667 25.193548,25.193548 0 0 0 46.128967,101.30648 25.193548,25.193548 0 0 0 70.192615,83.570093 H 49.322571 c -4.131193,0 -7.456909,-3.326233 -7.456909,-7.457426 0,-4.131193 3.325716,-7.456909 7.456909,-7.456909 h 20.86901 A 25.193548,25.193548 0 0 0 46.128967,50.919373 Z" />
+      <text
+         xml:space="preserve"
+         transform="matrix(0.26458333,0,0,0.26458333,13.129032,8.059516)"
+         id="text6250"
+         style="font-weight:bold;font-size:42.6667px;font-family:Calibri;-inkscape-font-specification:'Calibri Bold';white-space:pre;shape-inside:url(#rect6252);display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.00157;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:normal"><tspan
+           x="132.77148"
+           y="270.68883"
+           id="tspan9155">SPOTIZER</tspan></text>
+    </g>
+  </g>
+</svg>

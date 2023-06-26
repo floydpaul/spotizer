@@ -53,9 +53,17 @@ include('queries.php');
                     ?>
                 </div>
                     <?php 
-                        if(isset($_SESSION['id_utilisateur']) AND $_GET['id_utilisateur']==$_SESSION['id_utilisateur']){?>
-                        <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
-                        <?php
+                        if(isset($_SESSION['id_utilisateur'])){
+                            if(isset($_GET['id_utilisateur'])){
+                                if($_SESSION['id_utilisateur']==$_GET['id_utilisateur']){?>
+                                    <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
+                                    <?php
+                                }
+                            }
+                            else {?>
+                                 <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
+                            <?php
+                            }
                         }
                     ?>
             </div>

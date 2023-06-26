@@ -2,5 +2,5 @@
 include('functions.php');
 newSong();
 
-header('Location: accueil.php');
+header('Location: index.php');
 ?>

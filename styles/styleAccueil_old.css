@@ -1,13 +1,14 @@
-body {
+html,body {
     font-family: calibri;
     margin:0;
-    height: 100vh;
+    height: 100%;
+    display: flex;
 }
 
 
 
 /*background-colors*/
-.background1 {
+/*.background1 {
     background-color: #008080ff ;
 }
 
@@ -20,7 +21,7 @@ body {
 }
 .background4 {
     background-color: white;
-}
+}*/
 
 /*colors*/
 .color1 {
@@ -116,11 +117,11 @@ input {
     width: 400px;
 }
 .height {
-    height: 200px ;
+/*    height: 200px ;*/
     margin-left: 0px;
 }
 .height1 {
-    height: 60px ;
+/*    height: 60px ;*/
 }
 
 .width2 {
@@ -150,7 +151,7 @@ input {
 }
 
 .imgindex {
-    height: 200px;
+/*    height: 200px;*/
     width: 200px;
 }
 
@@ -165,22 +166,21 @@ input {
 }
 
 
-nav {
+/*nav {
     width: 300px;
     padding-left: 50px;
     margin-top: 100px;
- }
+ }*/
 
 .element {
     display: flex;
     margin: 20px 0;
     align-items: center;
-     font-size: 30px;
-     font-weight:200;
+    font-size: 30px;
+    font-weight:200;
 }
 
 .a2:hover {
-  
     cursor: pointer;
     font-weight: 600;
 }
@@ -189,7 +189,7 @@ nav {
     height: 50px;
     justify-content: right;
     align-items: center;
-    width: 1550px;
+/*    width: 80%;*/
 }
 
 #contener {
@@ -203,10 +203,10 @@ nav {
 
 .cards {
     flex-wrap: wrap;
-    width: 1200px;
+/*    width: 1200px;*/
     margin: auto;
     margin: 50px 150px;
-    position: absolute;
+/*    position: absolute;*/
     overflow:hidden;
 }
 
@@ -281,9 +281,19 @@ h2, h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 800px;
+    height: 85%;
 }
 
 #menu {
     box-shadow: 10px 0 20px 0 gray;
+}
+
+.connexion {
+    display: flex;
+    justify-content: end;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
 }
