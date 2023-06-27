@@ -80,7 +80,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
         ]) ;
         } 
-        if (isset($_FILES['photo']) && !isset($_POST['presentation'])) {
+        if (isset($_FILES['photo']) && empty($_POST['presentation'])) {
             
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                 $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
@@ -106,7 +106,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
                 ]) ;
             }
-        if (!isset($_FILES['photo']) && isset($_POST['presentation'])) {
+        if (empty($_FILES['photo']) && isset($_POST['presentation'])) {
             
             $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation WHERE id_utilisateur =:id_utilisateur');
             $query ->execute([
@@ -264,6 +264,35 @@ include('bdd.php');
         
             
     }
+    function mailto(){
+        if ( isset($_POST['email']) && !empty($_POST['email'])) {
+                $dest = $_POST['email'];
+                $objet = "Inscription à Spotizer";
+                $message = "Bonjour\n Vous êtes inscrit sur Spotizer.\n Vous pouvez maintenant écouter de la musique. \n Cordialement.";
+                $entetes = "noreply@spotizer.alwaysdata.net/";
+                $entetes.="Content-Type: text/html; charset=iso-8859-1";
+        } 
+        $mail = mail($dest, $objet, $message,$entetes);
+        if ($mail == true) {
+                header('Location: index.php');
+        } 
+                else {
+                echo'Entrez une adresse mail';
+        };
+     
+}
+
+function deleteplaylist(){
+    session_start();
+    global $db;
+  
+        $query = $db ->prepare('DELETE FROM playlist WHERE id_playlist = :id_playlist AND id_utilisateur ='.$_SESSION['id_utilisateur'].'');
+        $query->execute([
+            'id_playlist'=>$_GET['id_playlist'],
+        ]);
+}
+       
+
 
 ?>
 
