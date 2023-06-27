@@ -80,7 +80,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
         ]) ;
         } 
-        if (isset($_FILES['photo']) && !isset($_POST['presentation'])) {
+        if (isset($_FILES['photo']) && empty($_POST['presentation'])) {
             
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                 $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
@@ -106,7 +106,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
                 ]) ;
             }
-        if (!isset($_FILES['photo']) && isset($_POST['presentation'])) {
+        if (empty($_FILES['photo']) && isset($_POST['presentation'])) {
             
             $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation WHERE id_utilisateur =:id_utilisateur');
             $query ->execute([
@@ -281,6 +281,18 @@ include('bdd.php');
         };
      
 }
+
+function deleteplaylist(){
+    session_start();
+    global $db;
+  
+        $query = $db ->prepare('DELETE FROM playlist WHERE id_playlist = :id_playlist AND id_utilisateur ='.$_SESSION['id_utilisateur'].'');
+        $query->execute([
+            'id_playlist'=>$_GET['id_playlist'],
+        ]);
+}
+       
+
 
 ?>
 

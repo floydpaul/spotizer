@@ -43,6 +43,7 @@ require_once('queries.php');
                             <th></th>
                             <th>Nom</th>
                             <th>Créée par</th>
+                            <th>Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -52,6 +53,7 @@ require_once('queries.php');
                 			<td><img src="images/covers/<?= $playlist['cover']; ?>" class="morceau"></td>
                             <td><a href="/spotizer/playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
                             <td><?= $playlist['pseudo']; ?></td>
+                            <td><a href="deleteplaylist.php?id_playlist=<?= $playlist['id_playlist']; ?>">X</td>
                         </tr>
             		<?php
             		}
