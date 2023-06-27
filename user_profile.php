@@ -1,36 +1,32 @@
-<?php 
-include('queries.php');
-
+<?php
+require_once('queries.php');
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styleProfile.css">
-
+    <link rel="stylesheet" type="text/css" href="styles/styleIndex.css">
+     <link rel="stylesheet" type="text/css" href="styles/styleProfil.css">
     <title>Spotizer</title>
 </head>
-
-<body class="flex">
-    <?php include('menu.php');?>
+<body>
+  <?php require_once('menu.php'); ?>
     <section>
-        <div class="connexion flex">
-          <?php include('session_profile.php'); ?>
-        </div>    
-        <div class="pd-50 color1">
+        <div id="connexion">
+            <?php include('session.php'); ?>
+        </div>
+        <div id="contener">
             <div class="flex">
-               <div>
-                    <h1><?= $utilisateur['pseudo'];?></h1>
-                    <div class="inscription flex">
-                        <h3><?= $utilisateur['date_inscription'];?></h3>
-                    </div>
-                </div>   
+                <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="profile" class="imguser">
+                
                 <div>
-                    <img src="images/utilisateurs/<?= $utilisateur['photo']; ?>" alt="profile" class="imguser">
-                </div>
+                    <h1><?= $utilisateur['pseudo'];?></h1>
+                    <h3><?= $utilisateur['date_inscription'];?></h3>
+                </div>   
+      
             </div>    
             <div id="presentation">
                 <h3>Présentation</h3>
@@ -61,7 +57,7 @@ include('queries.php');
                                 }
                             }
                             else {?>
-                                 <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
+                                 <a href="modifier_profile.php" class="bttn" >Modifier les informations</a>
                             <?php
                             }
                         }
@@ -69,5 +65,8 @@ include('queries.php');
             </div>
         </div>
     </section>
+
+
+<script type="text/javascript" src="scripts/Accueil.js"></script>
 </body>
 </html>

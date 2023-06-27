@@ -26,11 +26,6 @@ require_once('queries.php');
                             <h2><?= $morceau['auteur']; ?></h2>
                             <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></h3>
                         </div>
-                        <div class="card">
-                            <img class="imgindex" src="images/jaquettes/<?= $morceau['jaquette']; ?>" alt="">
-                            <h2><?= $morceau['auteur']; ?></h2>
-                            <h3><a href="morceau.php?id_morceau=<?= $morceau['id_morceau']; ?>"><?= $morceau['titre']; ?></a></h3>
-                        </div>
                     <?php
                     }
                     ?>        

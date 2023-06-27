@@ -9,17 +9,17 @@ require_once('queries.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
     <link rel="stylesheet" type="text/css" href="styles/styleInscription.css">
+ 
     <title>Nouveau morceau</title>
 </head>
 <body>
-<header class="background2"><img class="height1" src="icones/logo_spotizer.svg">
-</header>
- 
+    <a href="index.php">
+        <img id="logo" src="icones/logo_spotizer.svg">
+    </a>
+
     <main>
-        <div class="flex-center-col background3">
-            <div class="color1 background4 width1 formulaire" style="margin-top: -35px;">
+            <div class="color1 width1 formulaire">
                 <div class="container text-center">
                     <h1>Ajoutez un morceau</h1>
                 </div>
@@ -63,7 +63,7 @@ require_once('queries.php');
                 </form>
                 
             </div>
-        </div>
+       
     </main>
 </body>
 </html>

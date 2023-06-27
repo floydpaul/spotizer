@@ -8,7 +8,7 @@ include('queries.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleIndex.css">
     <title>Document</title>
 </head>
 <body class="flex">
@@ -17,20 +17,9 @@ include('queries.php');
     
     </div>
     <section>
-        <div class="connexion  flex">
-            <?php 
-                if(!empty($_SESSION)){?>
-                    <a class="a2" href="user_profile.php">Mon profil</a>
-                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-                <?php
-                }
-                else {?>
-                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
-                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-                <?php
-                }
-            
-            ?>
+        <div id="connexion">
+            <?php include('session.php'); ?>
+        </div>
             
         </div>
         <div id="slider">

@@ -10,34 +10,21 @@ require_once('queries.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/styleAccueil.css">
-    <link rel="stylesheet" type="text/css" href="styles/styleCategorie.css">
+    <link rel="stylesheet" type="text/css" href="styles/styleIndex.css">
+      <link rel="stylesheet" type="text/css" href="styles/stylePlaylists.css">
+
     <title>Spotizer</title>
 </head>
-<body class="flex">
-    
-      
-        <?php include('menu.php'); ?>
-    
-    
-    <div class="contener">
-        <div class="connexion flex">
-            <?php 
-            
-                if(!empty($_SESSION)){?>
-                    <a class="bttn1" href="logout.php">SE DÉCONNECTER</a>
-                <?php
-                }
-                else {?>
-                    <a class="a2" href="inscription.php">S'INSCRIRE</a>
-                    <a class="bttn1" href="connexion.php">SE CONNECTER</a>
-                <?php
-                }
-            
-            ?>
+<body>
+  <?php require_once('menu.php'); ?>
+    <section>
+        <div id="connexion">
+            <?php include('session.php'); ?>
         </div>
-        <section>
-                <table>
+        <div id="contener">
+            <h1>Playlists</h1>
+          
+            <table>
                     <thead>
                         <tr>
                             <th></th>
@@ -46,19 +33,20 @@ require_once('queries.php');
                         </tr>
                     </thead>
                     <tbody>
-            	<?php
-            		foreach($playlists as $playlist){?>
+                <?php
+                    foreach($playlists as $playlist){?>
                         <tr>
-                			<td><img src="images/covers/<?= $playlist['cover']; ?>" class="morceau"></td>
+                            <td><img src="images/covers/<?= $playlist['cover']; ?>"></td>
                             <td><a href="/spotizer/playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
                             <td><?= $playlist['pseudo']; ?></td>
                         </tr>
-            		<?php
-            		}
-            	?>
+                    <?php
+                    }
+                ?>
                 </tbody>
                 </table>
-        </section>    
-    </div>
+               
+        </div>        
+   </section>    
 </body>
 </html>

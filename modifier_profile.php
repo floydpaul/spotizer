@@ -13,10 +13,11 @@ session_start();
     <title>Document</title>
 </head>
 <body>
-    <header class="background2"><img class="height1" src="icones/logo_spotizer.svg"></header>
+    <a href="index.php">
+        <img id="logo" src="icones/logo_spotizer.svg"></a>
+    
     <main>
-        <div class="flex-center-col background3">
-            <div class="color1 background4 width1" style="margin-top: -35px;">
+            <div class="color1 width1 formulaire">
                 <div class="container text-center">
                     <h1>Modifier le profil</h1>
                 </div>
@@ -36,6 +37,6 @@ session_start();
 
                 </form>
             </div>    
-        </div>        
+    </main>         
 </body>
 </html>

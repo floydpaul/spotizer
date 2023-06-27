@@ -3,58 +3,14 @@ body {
     margin:0;
     height: 100vh;
     overflow-y: hidden;
+    color:#008080ff ;
 }
 
-
-
-/*background-colors*/
-.background1 {
-    background-color: #008080ff ;
-}
-
-.background2 {
-    background-color: #e6e6e6ff;
-}
-
-.background3 {
-    background-color: #f2f2f2ff;
-}
-.background4 {
-    background-color: white;
-}
-
-/*colors*/
-.color1 {
-    color: #008080ff;
-}
-
-.color2 {
-    color: #e6e6e6ff;
-}
-
-.color3 {
-    color: #f2f2f2ff;
-}
-.color4 {
-    color: white;
-}
-
-/* FONT SIZE */
-.size-small {
-    font-size: 1rem;
-}
-.size-medium {
-    font-size: 1.5rem;
-}
-.size-large {
-    font-size: 2rem;
-}
-.size-extra-large {
-    font-size: 2.5rem;
-}
-/*font-family*/
-.police{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 /*positionnement*/
@@ -226,7 +182,7 @@ input[type=file]::file-selector-button {
 }
 
 .formulaire {
-    position: relative;
+/*    position: relative;*/
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     bottom: 100px;
 }
@@ -249,4 +205,11 @@ input[type=file]::file-selector-button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
 }

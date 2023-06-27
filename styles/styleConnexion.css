@@ -5,6 +5,12 @@ body {
     overflow-y: hidden;
 }
 
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
 
 /*background-colors*/
@@ -12,13 +18,7 @@ body {
     background-color: #008080ff ;
 }
 
-.background2 {
-    background-color: #e6e6e6ff;
-}
 
-.background3 {
-    background-color: #f2f2f2ff;
-}
 .background4 {
     background-color: white;
 }
@@ -65,8 +65,8 @@ body {
 .flex-center, .flex-center-col {
 	display: flex;
 	align-items: center;
-    padding-top: 100px;
 }
+
 .flex-center-col {
 	flex-direction: column;
 }
@@ -203,4 +203,11 @@ a {
 
 label {
     font-size: 25px;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 150px;
 }

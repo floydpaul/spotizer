@@ -43,13 +43,18 @@ nav {
 }
 
 #logo {
-	width: 100%;
+	height: 150px;
 }
 
 #connexion {
 	text-align: end;
 	position: fixed;
 	width: 100%;
+    background-color: white;
+}
+
+#connexion a {
+    margin: 1%;
 }
 
 .bttn {
@@ -58,8 +63,9 @@ nav {
     border-radius: 20px;
     text-decoration: none;
     display: inline-block;
-    margin: 10px;
+    margin: 30px 0;
     padding: 10px;
+    border:none;
 }
 
 #contener {
@@ -67,7 +73,7 @@ nav {
    	flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 6%;
     padding-left: 20%;
 }
 
@@ -78,6 +84,7 @@ nav {
 	background-color: #008080ff;
 	position: fixed;
 	height: 100%;
+    z-index: 1;
 }
 
 .card {
@@ -102,4 +109,8 @@ nav {
 .imgindex {
     width: 200px;
     height: 200px;
+}
+
+.flex {
+    display: flex;
 }

@@ -220,7 +220,7 @@ include('bdd.php');
                     // Testons si l'extension est autorisée
                     $fileInfo = pathinfo($_FILES['cover']['name']);
                     $extension = $fileInfo['extension'];
-                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
                     $tmpName = $_FILES['cover']['tmp_name'];
                     if (in_array($extension, $allowedExtensions))
                     {
@@ -248,7 +248,7 @@ include('bdd.php');
         if ($_POST['song']) {
             foreach($_POST['song'] as $id_morceau){
                 //On prépare la commande sql d'insertion
-             $query = $db->prepare('INSERT INTO posséder(id_morceau,id_playlist) VALUES(:id_morceau,:id_playlist)'); 
+             $query = $db->prepare('INSERT INTO posseder(id_morceau,id_playlist) VALUES(:id_morceau,:id_playlist)'); 
               
              /*on lance la commande (query)*/
                  $query->execute([

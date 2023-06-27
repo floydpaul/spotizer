@@ -1,0 +1,21 @@
+#contener {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-top: 5%;
+    padding-right: 20%;
+}
+
+.imguser {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-right: 10%;
+    
+}
+
+#presentation {
+    margin-top: 10%;
+}
+

@@ -16,7 +16,7 @@ $categories = $query->fetchAll();
 /* requête pour récupérer tous les informations d'un morceau selon son identifiant */
 if(isset($_GET['id_morceau'])){
 	
-	$query = $db->prepare('SELECT * FROM morceau NATURAL JOIN utilisateur LEFT JOIN style ON morceau.id_style= style.id_style WHERE id_morceau='.$_GET['id_morceau'].'');
+	$query = $db->prepare('SELECT *, morceau.jaquette AS vignette FROM morceau NATURAL JOIN utilisateur LEFT JOIN style ON morceau.id_style= style.id_style WHERE id_morceau='.$_GET['id_morceau'].'');
 	$query->execute();
 	$morceau = $query->fetch();	
 	
@@ -25,7 +25,7 @@ if(isset($_GET['id_morceau'])){
 /* requête pour récupérer les informations d'une catégorie */
 if(isset($_GET['id_categorie'])){
 	
-	$query = $db->prepare('SELECT * FROM style  NATURAL JOIN morceau NATURAL JOIN utilisateur WHERE id_style='.$_GET['id_categorie'].'');
+	$query = $db->prepare('SELECT *, style.jaquette AS vignette FROM style  INNER JOIN morceau ON style.id_style= morceau.id_style WHERE style.id_style='.$_GET['id_categorie'].'');
 	$query->execute();
 	$morceaux = $query->fetchAll();	
 }
@@ -104,7 +104,7 @@ if (isset ($_GET['id_playlist'])){
 
 /*requête pour récupérer les informations d'une playlist selon son identifiant*/
 if (isset ($_GET['id_playlist'])){
-	$query = $db->prepare('SELECT * FROM posséder NATURAL JOIN morceau WHERE posséder.id_playlist ='.$_GET['id_playlist'].'');
+	$query = $db->prepare('SELECT * FROM posseder NATURAL JOIN morceau WHERE posseder.id_playlist ='.$_GET['id_playlist'].'');
 	$query->execute();
 	$playlists = $query->fetchall();
 } 
