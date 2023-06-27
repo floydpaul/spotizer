@@ -30,7 +30,6 @@ require_once('queries.php');
                             <th></th>
                             <th>Nom</th>
                             <th>Créée par</th>
-                            <th>Supprimer</th>
                         </tr>
                     </thead>
                     <tbody>

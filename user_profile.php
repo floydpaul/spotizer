@@ -24,7 +24,7 @@ require_once('queries.php');
                 
                 <div>
                     <h1><?= $utilisateur['pseudo'];?></h1>
-                    <h3><?= $utilisateur['date_inscription'];?></h3>
+                    <h3>Inscrite le <?= date('d-m-Y',strtotime($utilisateur['date_inscription']));?></h3>
                 </div>   
       
             </div>    

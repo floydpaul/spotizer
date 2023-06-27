@@ -12,12 +12,12 @@
     <main>
         <div class="color1 formulaire width1">
             <div class="container text-center">
-                <h1>Inscrivez vous gratuitement pour lancer la lecture</h1>
+                <h1>Inscrivez vous gratuitement pour partager vos morceaux et rejoindre la communauté !</h1>
             </div>
             <form name="inscription" method="post" enctype="multipart/form-data" action="ajouterUser.php">
                 <div class="container text-center">
                     <label for="email" class="form-label">Adresse email</label><br>
-                    <input type="mail" name="email" class="form-control"><br>
+                    <input type="email" name="email" class="form-control"><br>
                 </div>
                 <div class="container text-center">
                     <label for="identifiant" class="form-label">Pseudo</label><br>
@@ -28,7 +28,7 @@
                     <input type="password" name="mdp" class="form-control"><br>
                 </div>
                 <div class="container text-center">
-                    <label for="cmdp" class="form-label">Comfirmer mot de passe</label><br>
+                    <label for="cmdp" class="form-label">Confirmer mot de passe</label><br>
                     <input type="password" name="cmdp" class="form-control"><br>
                 </div>
                 <div class=" text-center">

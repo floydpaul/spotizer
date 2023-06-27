@@ -20,7 +20,7 @@ include('bdd.php');
                 if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                     $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
                     // Testons si le fichier n'est pas trop gros
-                    if ($_FILES['photo']['size'] <= 1000000)
+                    if ($_FILES['photo']['size'] <= 2000000)
                     {
             
                             // Testons si l'extension est autorisée

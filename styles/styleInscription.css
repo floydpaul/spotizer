@@ -192,13 +192,16 @@ input[type=file]::file-selector-button {
 }
 
 #categorie {
-    height: 30px;
-    width: 400px;
+    height: 40px;
+    width: 95%;
     font-size: 20px;
     display: block;
     margin: 10px;
     text-align: center;
+    border-radius: 20px;
 }
+
+
 
 .select {
     display: flex;
