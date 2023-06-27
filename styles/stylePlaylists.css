@@ -22,9 +22,17 @@ td img {
 }
 
 .categorie {
-	width: 200px;
+    width: 200px;
+    margin-right: 50px;
+    height: 200px;
+    border-radius: 50%;
 }
 
 h1 {
     font-size: 3em;
+}
+
+.head {
+    margin-top: 50px;
+    align-items: center;
 }

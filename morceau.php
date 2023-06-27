@@ -19,7 +19,7 @@ require_once('queries.php');
             <?php include('session.php'); ?>
         </div>
             <div id="contener">
-                <div class="flex">
+                <div id="presentation">
                     <img  src="images/jaquettes/<?= $morceau['vignette']; ?>" class="card-img-top img-thumbnail" alt="" >
                     <div class="pd-left-50">                   
                         <h1><?= $morceau['titre']; ?></h1>

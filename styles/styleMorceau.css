@@ -1,5 +1,6 @@
 #contener {
 	flex-direction: column;
+    padding: 0 20%;
 }
 
 .card-img-top {
@@ -7,11 +8,15 @@
     height: 20%;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin-right: 5%;
-    margin-bottom: 15%;
 }
 
 .submit {
     background: none;
     border: 1px solid #008080ff;
     color: #008080ff;
+}
+
+#presentation {
+    display: flex;
+    align-items: center;
 }

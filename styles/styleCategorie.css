@@ -19,8 +19,11 @@
 }
 
 #contener {
+    display: flex;
     flex-direction: column;
-    padding: 0 15%;
+    margin-top: 50px;
+    margin-top: 5%;
+    padding-right: 20%;
 }
 
 .center {

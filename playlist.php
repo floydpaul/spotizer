@@ -23,7 +23,7 @@ require_once('queries.php');
         </div>
         <div id="contener">
              <?php if(!empty($playlists)){?>
-            <div class="flex">
+            <div class="flex head">
 
                 <img src="images/covers/<?= $playlist['cover']; ?>" class="categorie">
                 <h1><?= $playlist['nom']; ?></h1>
