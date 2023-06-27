@@ -285,11 +285,14 @@ include('bdd.php');
 function deleteplaylist(){
     session_start();
     global $db;
-  
+    
+    if($_SESSION['id_utilisateur']){
+
         $query = $db ->prepare('DELETE FROM playlist WHERE id_playlist = :id_playlist AND id_utilisateur ='.$_SESSION['id_utilisateur'].'');
         $query->execute([
             'id_playlist'=>$_GET['id_playlist'],
         ]);
+    }
 }
        
 

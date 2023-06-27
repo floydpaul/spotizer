@@ -42,7 +42,7 @@ require_once('queries.php');
                     foreach($playlists as $playlist){?>
                         <tr>
                             <td><img src="images/jaquettes/<?= $playlist['jaquette']; ?>" class="morceau"></td>
-                            <td><a href="/spotizer/morceau.php?id_morceau=<?= $playlist['id_morceau']; ?>" class="gras"><?= $playlist['titre']; ?></a></td>
+                            <td><a href="morceau.php?id_morceau=<?= $playlist['id_morceau']; ?>" class="gras"><?= $playlist['titre']; ?></a></td>
                             <td><?= $playlist['auteur']; ?></td>
                             <td><audio controls src="mp3/<?= $playlist['fichier']; ?>"></audio></td>
                         </tr>

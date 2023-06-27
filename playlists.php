@@ -38,9 +38,9 @@ require_once('queries.php');
                     foreach($playlists as $playlist){?>
                         <tr>
                             <td><img src="images/covers/<?= $playlist['cover']; ?>"></td>
-                            <td><a href="/spotizer/playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
+                            <td><a href="playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
                             <td><?= $playlist['pseudo']; ?></td>
-                            <td><a href="deleteplaylist.php?id_playlist=<?= $playlist['id_playlist']; ?>">X</td>
+                            <td><a href="deleteplaylist.php?id_playlist=<?= $playlist['id_playlist']; ?>"><img src="icones/poubelle.svg" class="icone"></td>
                         </tr>
                     <?php
                     }
