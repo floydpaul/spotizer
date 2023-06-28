@@ -19,3 +19,22 @@
     margin-top: 10%;
 }
 
+
+/** Responsive **/
+
+@media (max-width:1024px){
+
+    #contener {
+        padding-left: 25%;
+        margin-top: 10%;
+    }
+}
+
+@media (max-width:768px){
+
+    #contener {
+    padding-left: 35%;
+    margin-top: 15%;
+    }   
+}
+

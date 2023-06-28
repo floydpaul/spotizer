@@ -114,3 +114,27 @@ nav {
 .flex {
     display: flex;
 }
+
+/** Responsive **/
+
+@media (max-width:768px){
+
+    #contener {
+        padding-left: 28%;
+    }
+}
+
+@media (max-width:425px){
+
+    #menu {
+        width:30%;
+    }
+
+    .element a span {
+        display: none;
+    }
+
+    #logo {
+        height: 100px;
+    }
+}
