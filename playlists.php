@@ -40,6 +40,7 @@ require_once('queries.php');
                             <td><a href="playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>" class="gras"><?= $playlist['nom']; ?></a></td>
                             <td><?= $playlist['pseudo']; ?></td>
                             <td><a href="deleteplaylist.php?id_playlist=<?= $playlist['id_playlist']; ?>"><img src="icones/poubelle.svg" class="icone"></td>
+                            <td><a href="updateplaylists.php?id_playlist=<?= $playlist['id_playlist']; ?>"><img src="icones/modifier.svg" class="icone"></td>
                         </tr>
                     <?php
                     }
