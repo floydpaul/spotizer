@@ -294,7 +294,25 @@ function deleteplaylist(){
         ]);
     }
 }
-       
+function updatePlaylist(){
+    global $db;
+    var_dump($_POST);
+    if ($_POST['song']) {
+        $query = $db ->prepare('DELETE FROM posseder WHERE id_playlist = '.$_GET['id_playlist'].'');
+            $query->execute();
+        foreach($_POST['song'] as $id_morceau){
+            $req='INSERT INTO posseder(id_morceau,id_playlist) VALUES(:id_morceau,:id_playlist)';
+            //On prépare la commande sql de mise à jour
+         $query = $db->prepare($req); 
+         /*on lance la commande (query)*/
+             $query->execute([
+                'id_morceau'=>$id_morceau,
+                'id_playlist'=> $_GET['id_playlist'],
+                ]);
+        }
+         
+    } 
+}   
 
 
 ?>
