@@ -73,12 +73,12 @@ require_once('queries.php');
                                 }
                             }
                             else {?>
-                                 <a href="modifier_profile.php" class="bttn" >Modifier les informations</a>
+                                 <a href="modifier_profile.php" class="modifier" >Modifier les informations</a>
                             <?php
                             }
                         }
                     ?>
-            </div>
+            
         </div>
     </section>
 
