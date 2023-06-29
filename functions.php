@@ -274,7 +274,7 @@ include('bdd.php');
         } 
         $mail = mail($dest, $objet, $message,$entetes);
         if ($mail == true) {
-                header('Location: index.php');
+                // header('Location: index.php');
         } 
                 else {
                 echo'Entrez une adresse mail';

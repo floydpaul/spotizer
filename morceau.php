@@ -45,11 +45,16 @@ require_once('queries.php');
                 }
                 ?>
                 </div>
-
-                <form action="queries.php?id_morceau=<?= $morceau['id_morceau']; ?>" method="POST">
-                    <textarea class="color1" name="contenu" rows="5" cols="50"></textarea><br>
-                    <input type="submit" class="bttn" value="Ajouter un commentaire">
-                </form>
+                    <?php 
+                    if (isset($_SESSION['id_utilisateur'])) {?>
+                        <form action="queries.php?id_morceau=<?= $morceau['id_morceau']; ?>" method="POST">
+                             <textarea class="color1" name="contenu" rows="5" cols="50"></textarea><br>
+                            <input type="submit" class="bttn" value="Ajouter un commentaire">
+                        </form>
+                    <?php
+                }
+                ?>
+                
                    
             </div>
     </section>
