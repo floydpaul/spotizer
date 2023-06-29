@@ -25,11 +25,11 @@ session_start();
 
                     <div class=" text-center">
                         <label>Changer la photo</label>
-                        <input type="file" name="photo">
+                        <input type="file" name="photo" value="<?=$_SESSION['photo']; ?>">
                     </div>
                     <div class="container text-center">
                         <label for="presentation" class="form-label">Modifier presentation</label>
-                        <textarea  rows="5" cols="40" id="presentation" name="presentation"></textarea><br>
+                        <textarea  rows="5" cols="40" id="presentation" name="presentation"><?=$_SESSION['presentation']?></textarea><br>
                     </div>
                     <div  class="d-grid gap-2 col-6 mx-auto">
                         <input type="submit" class="submit" value="Modifier">

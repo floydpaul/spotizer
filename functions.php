@@ -53,7 +53,7 @@ include('bdd.php');
 
     function updateUser(){
         global $db;
-        if (isset($_FILES['photo']) && isset($_POST['presentation'])) {
+        if (isset($_FILES['photo']) && !empty($_FILES['photo']) && isset($_POST['presentation'])) {
             
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                 $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
@@ -80,7 +80,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
         ]) ;
         } 
-        if (isset($_FILES['photo']) && empty($_POST['presentation'])) {
+        else if (isset($_FILES['photo']) && !empty($_FILES['photo']) && empty($_POST['presentation'])) {
             
             if (isset($_FILES['photo']) && $_FILES['photo']['error'] == 0){
                 $destination = ('images/utilisateurs/' . $_FILES['photo']['name']);
@@ -106,7 +106,7 @@ include('bdd.php');
                 'id_utilisateur'=> $_SESSION['id_utilisateur'],
                 ]) ;
             }
-        if (empty($_FILES['photo']) && isset($_POST['presentation'])) {
+        else if(empty($_FILES['photo']) && isset($_POST['presentation'])) {
             
             $query = $db ->prepare('UPDATE utilisateur SET presentation=:presentation WHERE id_utilisateur =:id_utilisateur');
             $query ->execute([
