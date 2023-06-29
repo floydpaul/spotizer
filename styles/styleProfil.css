@@ -19,6 +19,26 @@
     margin-top: 10%;
 }
 
+#playlists {
+    margin-top: 30px;
+}
+
+#playlists img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.playlist {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.playlist a {
+    margin-left: 20px;
+}
 
 /** Responsive **/
 

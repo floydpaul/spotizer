@@ -102,6 +102,14 @@ if (isset ($_GET['id_playlist'])){
 	$query->execute();
 	$playlists = $query->fetchall();
 
+/*requête pour récupérer les informations d'une playlist selon l'id_utilisateur */
+	
+if(isset($_GET['id_utilisateur'])){
+	$query = $db->prepare('SELECT * FROM playlist NATURAL JOIN utilisateur WHERE id_utilisateur='.$_GET['id_utilisateur'].'');
+	$query->execute();
+	$playlists = $query->fetchall();
+}
+
 /*requête pour récupérer les informations d'une playlist selon son identifiant*/
 if (isset ($_GET['id_playlist'])){
 	$query = $db->prepare('SELECT * FROM posseder NATURAL JOIN morceau WHERE posseder.id_playlist ='.$_GET['id_playlist'].'');
