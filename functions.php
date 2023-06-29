@@ -274,8 +274,12 @@ include('bdd.php');
         } 
         $mail = mail($dest, $objet, $message,$entetes);
         if ($mail == true) {
+<<<<<<< HEAD
                 header('Location: index.php');
             echo 'Envoi du mail réussi !';
+=======
+                // header('Location: index.php');
+>>>>>>> 4bf40ea86cc52fad8a53a3943718f5944a6b7f8d
         } 
                 else {
                 echo'Entrez une adresse mail';
