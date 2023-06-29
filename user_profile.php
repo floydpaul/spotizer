@@ -24,7 +24,7 @@ require_once('queries.php');
                 
                 <div>
                     <h1><?= $utilisateur['pseudo'];?></h1>
-                    <h3>Inscrite le <?= date('d-m-Y',strtotime($utilisateur['date_inscription']));?></h3>
+                    <h3>Inscrit(e) le <?= date('d-m-Y',strtotime($utilisateur['date_inscription']));?></h3>
                 </div>   
       
             </div>    
@@ -48,6 +48,22 @@ require_once('queries.php');
                     }
                     ?>
                 </div>
+            </div>
+            <div id="playlists">
+                <h3>Playlists</h3>
+                    
+                        <?php
+                            foreach($playlists as $playlist){?>
+                            <div class="playlist">
+                              <img src="images/covers/<?= $playlist['cover'];?>"> 
+                                <a href="playlist.php?id_playlist=<?= $playlist['id_playlist']; ?>"><?= $playlist['nom']; ?></a>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    
+                  
+            </div>
                     <?php 
                         if(isset($_SESSION['id_utilisateur'])){
                             if(isset($_GET['id_utilisateur'])){
