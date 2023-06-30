@@ -26,7 +26,7 @@ include('bdd.php');
                             // Testons si l'extension est autorisée
                             $fileInfo = pathinfo($_FILES['photo']['name']);
                             $extension = $fileInfo['extension'];
-                            $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                            $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp', 'jfif'];
                             $tmpName = $_FILES['photo']['tmp_name'];
                             if (in_array($extension, $allowedExtensions))
                             {
@@ -64,7 +64,7 @@ include('bdd.php');
                         // Testons si l'extension est autorisée
                         $fileInfo = pathinfo($_FILES['photo']['name']);
                         $extension = $fileInfo['extension'];
-                        $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
+                        $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp','jfif'];
                         $tmpName = $_FILES['photo']['tmp_name'];
                         if (in_array($extension, $allowedExtensions))
                         {
@@ -159,7 +159,7 @@ include('bdd.php');
                     // Testons si l'extension est autorisée
                     $fileInfo = pathinfo($_FILES['jaquette']['name']);
                     $extension = $fileInfo['extension'];
-                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png','webp','jfif'];
                     $tmpName = $_FILES['jaquette']['tmp_name'];
                     if (in_array($extension, $allowedExtensions))
                     {
@@ -220,7 +220,7 @@ include('bdd.php');
                     // Testons si l'extension est autorisée
                     $fileInfo = pathinfo($_FILES['cover']['name']);
                     $extension = $fileInfo['extension'];
-                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp'];
+                    $allowedExtensions = ['jpg', 'jpeg', 'gif', 'png', 'webp','jfif'];
                     $tmpName = $_FILES['cover']['tmp_name'];
                     if (in_array($extension, $allowedExtensions))
                     {
